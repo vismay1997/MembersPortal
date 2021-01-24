@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MarqueeService {
@@ -30,5 +31,9 @@ public class MarqueeService {
 
     public List<MarqueeDataBean> getAllMarqueesList() {
         return marqueeDao.findAll();
+    }
+
+    public Optional<MarqueeDataBean> getMarqueeFromId(Long id) {
+        return marqueeDao.findById(id);
     }
 }

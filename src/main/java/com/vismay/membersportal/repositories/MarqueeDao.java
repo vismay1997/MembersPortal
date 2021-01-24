@@ -9,5 +9,5 @@ import javax.persistence.Id;
 import java.util.List;
 
 @Repository
-public interface MarqueeDao extends JpaRepository<MarqueeDataBean, Id> {
+public interface MarqueeDao extends JpaRepository<MarqueeDataBean,Long> {
 }

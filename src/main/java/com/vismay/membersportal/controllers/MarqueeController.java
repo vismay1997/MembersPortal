@@ -27,6 +27,15 @@ public class MarqueeController {
         return "create-marquee";
     }
 
+
+    @GetMapping(path = "/view-marquee")
+    public String getViewMarquee(Model model,@RequestParam("id") Long Id){
+        model.addAttribute("databean",marqueeService.getMarqueeFromId(Id));
+        return "view-marquee";
+    }
+
+
+
     @GetMapping(path = "/search-marquee")
     public String getSearchMarquee(Model model){
         model.addAttribute("dataList",marqueeService.getAllMarqueesList());
