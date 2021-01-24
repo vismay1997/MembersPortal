@@ -326,7 +326,7 @@
                             <div class="card-header">
                                 <div class="card-title">
                                     <h3 class="card-label">
-                                        Create Marquee Section
+                                        View Marquee
                                     </h3>
                                 </div>
                             </div>
@@ -335,38 +335,37 @@
                                     <div class="form-group row">
                                         <div class="col-lg-12">
                                             <label>Marquee Title</label>
-                                            <label class="form-control"></label>
+                                            <label>${databean.title}</label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-12">
                                             <label>Marquee Image / Logo:</label>
-                                            <label class="form-control"></label>
+                                            <img src="/getimage?id=${databean.image}" height="50px" width="50px">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-6">
                                             <label>Marquee Description:</label>
-                                            <label class="form-control"></label>                                        </div>
+                                            <label>${databean.description}</label>                                        </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-6">
                                             <label>Marquee Start Timing:</label>
                                             <div class="col-lg-4 col-md-9 col-sm-12">
-                                                <label class="form-control"></label>                                            </div>
+                                                <label>${databean.startDateTime}</label>                                            </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <label>Marquee Start Timing:</label>
                                             <div class="col-lg-4 col-md-9 col-sm-12">
-                                                <label class="form-control"></label>                                            </div>
+                                                <label>${databean.endDateTime}</label>                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
                                         <div class="col-lg-8">
-                                            <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                                            <button type="submit" class="btn btn-primary mr-2">Go Back</button>
                                         </div>
                                     </div>
                                 </div>

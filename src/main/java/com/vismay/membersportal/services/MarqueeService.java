@@ -33,7 +33,7 @@ public class MarqueeService {
         return marqueeDao.findAll();
     }
 
-    public Optional<MarqueeDataBean> getMarqueeFromId(Long id) {
-        return marqueeDao.findById(id);
+    public MarqueeDataBean getMarqueeFromId(Long id) {
+        return marqueeDao.findById(id).get();
     }
 }
