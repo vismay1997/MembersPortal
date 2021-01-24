@@ -1,23 +1,17 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: vismay
-  Date: 1/23/2021
-  Time: 12:19 PM
+  User: Vismay Patel
+  Date: 1/24/2021
+  Time: 3:43 PM
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Company Registration</title>
+    <title>Search And Manage Marquee</title>
     <link href="<c:url value="plugins/global/plugins.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
     <link href="<c:url value="plugins/custom/prismjs/prismjs.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
     <link href="<c:url value="css/style.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
-    <!--end::Global Theme Styles-->
-    <!--begin::Layout Themes(used by all pages)-->
-    <link href="<c:url value="css/themes/layout/header/base/light.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/themes/layout/header/menu/light.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/themes/layout/brand/dark.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/themes/layout/aside/dark.css"></c:url>" rel="stylesheet" type="text/css" />
 </head>
 <body id="kt_body" style="background-image: url(media/bg/bg-10.jpg)" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
 <!--begin::Main-->
@@ -25,7 +19,7 @@
 <div id="kt_header_mobile" class="header-mobile">
     <!--begin::Logo-->
     <a href="index.html">
-        <img alt="Logo" src="assets/media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
+        <img alt="Logo" src="media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
     </a>
     <!--end::Logo-->
     <!--begin::Toolbar-->
@@ -35,7 +29,7 @@
         </button>
         <button class="btn btn-icon btn-hover-transparent-white p-0 ml-3" id="kt_header_mobile_topbar_toggle">
 					<span class="svg-icon svg-icon-xl">
-						<!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
+						<!--begin::Svg Icon | path:media/svg/icons/General/User.svg-->
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 								<polygon points="0 0 24 0 24 24 0 24" />
@@ -83,7 +77,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -99,7 +93,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -126,7 +120,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -142,7 +136,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -169,7 +163,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -185,7 +179,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -212,7 +206,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -228,7 +222,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -255,7 +249,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -271,7 +265,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -287,7 +281,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -321,78 +315,79 @@
                 <div class="d-flex flex-column-fluid">
                     <!--begin::Container-->
                     <div class="container">
-                        <div class="card card-custom gutter-b mt-15">
-                            <div class="card-header">
+                        <div class="card card-custom">
+                            <div class="card-header flex-wrap border-0 pt-6 pb-0">
                                 <div class="card-title">
-                                    <h3 class="card-label">
-                                        Company Registration Page
-                                    </h3>
+                                    <h3 class="card-label">Search Marquee</h3>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form class="form">
-                                    <div class="card-body">
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Company Name</label>
-                                                <input type="email" class="form-control" placeholder="Enter full name"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Email ID:</label>
-                                                <input type="email" class="form-control" placeholder="Enter Your BirthDate"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Mobile No.:</label>
-                                                <input type="email" class="form-control" placeholder="Enter full name"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Company Logo:</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="customFile"/>
-                                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                                </div>                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Login Password:</label>
-                                                <input type="email" class="form-control" placeholder="Enter full name"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Address :</label>
-                                                <textarea class="form-control" name="memo" placeholder="Enter a menu" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>HR Name :</label>
-                                                <input type="email" class="form-control" placeholder="Enter full name"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>HR Contact No. :</label>
-                                                <input type="email" class="form-control" placeholder="Enter full name"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Supporting Documents:</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="customFile"/>
-                                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                <!--begin: Search Form-->
+                                <!--begin::Search Form-->
+                                <div class="mb-7">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-9 col-xl-8">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 my-2 my-md-0">
+                                                    <div class="input-icon">
+                                                        <input type="text" class="form-control" placeholder="Search..." id="kt_datatable_search_query" />
+                                                        <span>
+                                                            <i class="flaticon2-search-1 text-muted"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 my-2 my-md-0">
+                                                    <div class="d-flex align-items-center">
+                                                        <label class="mr-3 mb-0 d-none d-md-block">Status:</label>
+                                                        <select class="form-control" id="kt_datatable_search_status">
+                                                            <option value="">All</option>
+                                                            <option value="1">Pending</option>
+                                                            <option value="3">Canceled</option>
+                                                            <option value="4">Live</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <button type="reset" class="btn btn-primary mr-2">Save</button>
-                                                <button type="reset" class="btn btn-secondary">Cancel</button>
-                                            </div>
+                                        <div class="col-lg-3 col-xl-4 mt-5 mt-lg-0">
+                                            <a href="#" class="btn btn-light-primary px-6 font-weight-bold">Search</a>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
+                                <!--end::Search Form-->
+                                <!--end: Search Form-->
+                                <!--begin: Datatable-->
+                                <table id="kt_datatable" class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
+                                    <thead>
+                                    <tr>
+                                        <th title="Field #1">Sr No.</th>
+                                        <th title="Field #1">Marquee Title</th>
+                                        <th title="Field #2">Marquee Image</th>
+                                        <th title="Field #3">Marquee Description</th>
+                                        <th title="Field #4">Marquee Start Timing</th>
+                                        <th title="Field #5">Marquee End Timing</th>
+                                        <th title="Field #6">View</th>
+                                        <th title="Field #7">Edit</th>
+                                        <th title="Field #8">Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${dataList}" var="item" varStatus="i">
+                                        <tr>
+                                            <td>${i.index+1}</td>
+                                            <td>${item.title}</td>
+                                            <td><img src="/getimage?id=${item.image}" height="50px" width="50px"></td>
+                                            <td>${item.description}</td>
+                                            <td>${item.startDateTime}</td>
+                                            <td>${item.endDateTime}</td>
+                                            <td class="text-right"><a href="/view-marquee-detail?id=${item.marqueeID}" class="btn btn-primary">View</a></td>
+                                            <td class="text-right"><a href="/edit-marquee-detail?id=${item.marqueeID}" class="btn btn-primary">Edit</a></td>
+                                            <td>${item.status}</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                                <!--end: Datatable-->
                             </div>
                         </div>
                     </div>
@@ -445,33 +440,11 @@
 <!--begin::Global Config(global config for global JS scripts)-->
 <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#6993FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#E1E9FF", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
 <!--end::Global Config-->
-<!--begin::Global Theme Bundle(used by all pages)-->
-<script src="assets/plugins/global/plugins.bundle.js"></script>
-<script src="assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
-<script src="assets/js/scripts.bundle.js"></script>
-<!--end::Global Theme Bundle-->
-<!--begin::Page Vendors(used by this page)-->
-<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-<script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM"></script>
-<script src="assets/plugins/custom/gmaps/gmaps.js"></script>
-<!--end::Page Vendors-->
-<!--begin::Page Scripts(used by this page)-->
-<script src="assets/js/pages/widgets.js"></script>
-<!--end::Page Scripts-->
-</body>
-<!--begin::Global Config(global config for global JS scripts)-->
-<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
-<!--end::Global Config-->
-<!--begin::Global Theme Bundle(used by all pages)-->
+
 <script src="<c:url value="plugins/global/plugins.bundle.js"></c:url>"></script>
 <script src="<c:url value="plugins/custom/prismjs/prismjs.bundle.js"></c:url>"></script>
 <script src="<c:url value="js/scripts.bundle.js"></c:url>"></script>
-<!--end::Global Theme Bundle-->
-<!--begin::Page Vendors(used by this page)-->
-<script src="<c:url value="plugins/custom/fullcalendar/fullcalendar.bundle.js"></c:url>"></script>
-<!--end::Page Vendors-->
-<!--begin::Page Scripts(used by this page)-->
-<script src="<c:url value="js/pages/widgets.js"></c:url>"></script>
-<!--end::Page Scripts-->
+<script src="<c:url value="js/pages/crud/ktdatatable/base/html-table.js"></c:url>"></script>
 
+</body>
 </html>
