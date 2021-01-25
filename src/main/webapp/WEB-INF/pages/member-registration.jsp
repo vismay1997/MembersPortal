@@ -560,14 +560,14 @@
 
         $(".add-more-qualification").click(function(){
             index++;
-            var data="<tr><td><input type='checkbox' class='qualification_case' class='form-control' /></td><td><span class='row_no'>"+index+"</span></td><td><input path='qualificationInformations["+index+"].nameOfCourse' class='form-control' placeholder='Enter full name'/></td><td><input path='qualificationInformations["+index+"].instituteName' class='form-control' placeholder='Enter Your Age'/></td><td><input path='qualificationInformations["+index+"].passingYear' class='form-control' placeholder='Enter Your Age'/></td><td><input path='qualificationInformations["+index+"].percentage' class='form-control' placeholder='Enter Your Age'/></td></tr>";
+            var data="<tr><td><input type='checkbox' class='qualification_case' class='form-control' /></td><td><span class='row_no'>"+index+"</span></td><td><input path='qualificationInformations["+index+"].nameOfCourse' class='form-control'/></td><td><input path='qualificationInformations["+index+"].instituteName' class='form-control'/></td><td><input path='qualificationInformations["+index+"].passingYear' class='form-control'/></td><td><input path='qualificationInformations["+index+"].percentage' class='form-control'/></td></tr>";
             $(".qualification-body").append(data);
 
         });
 
         $(".add-more-revenue").click(function(){
             index_revenue++;
-            var data="<tr><td><input type='checkbox' class='revenue_case' class='form-control' /></td><td><span class='row_no'>"+index_revenue+"</span></td><td><input path='revenueInformations["+index_revenue+"].typeOFRevenue' class='form-control' placeholder='Enter full name'/></td><td><input path='revenueInformations["+index_revenue+"].typeOfJob' class='form-control' placeholder='Enter Your Age'/></td><td><input path='revenueInformations["+index+"].experience' class='form-control' placeholder='Enter Your Age'/></td><td><input path='revenueInformations["+index_revenue+"].workingPlace' class='form-control' placeholder='Enter Your Age'/></td></tr>";
+            var data="<tr><td><input type='checkbox' class='revenue_case' class='form-control' /></td><td><span class='row_no'>"+index_revenue+"</span></td><td><input path='revenueInformations["+index_revenue+"].typeOFRevenue' class='form-control'/></td><td><input path='revenueInformations["+index_revenue+"].typeOfJob' class='form-control'/></td><td><input path='revenueInformations["+index+"].experience' class='form-control'/></td><td><input path='revenueInformations["+index_revenue+"].workingPlace' class='form-control'/></td></tr>";
             $(".revenue-body").append(data);
 
         });
