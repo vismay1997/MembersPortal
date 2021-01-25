@@ -5,7 +5,9 @@
   Time: 12:19 PM
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <title>Home Page Section</title>
@@ -330,76 +332,62 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form class="form">
+                                <form:form modelAttribute="databean" class="form">
                                     <div class="card-body">
                                         <div class="form-group row">
                                             <div class="col-lg-6">
                                                 <label>Full Name:</label>
-                                                <input type="email" class="form-control" placeholder="Enter full name"/>
+                                                <form:input path="fullName" class="form-control"/>
                                             </div>
                                             <div class="col-lg-6">
                                                 <label>Birth Date:</label>
-                                                <input type="email" class="form-control" placeholder="Enter Your BirthDate"/>
+                                                <form:input path="birthDate" type="date" class="form-control" placeholder="Enter Your BirthDate"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-6">
-                                                <label>Full Name:</label>
-                                                <input type="email" class="form-control" placeholder="Enter full name"/>
-                                            </div>
-                                            <div class="col-lg-6">
                                                 <label>Age:</label>
-                                                <input type="email" class="form-control" placeholder="Enter Your Age"/>
+                                                <form:input path="age" class="form-control" placeholder="Enter Your Age"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-6">
                                                 <label>Phone Number:</label>
-                                                <input type="email" class="form-control" placeholder="Enter full name"/>
+                                                <form:input path="phoneNo" class="form-control"/>
                                             </div>
                                             <div class="col-lg-6">
                                                 <label>Mobile No:</label>
-                                                <input type="email" class="form-control" placeholder="Enter Your Age"/>
+                                                <form:input path="mobileNo" class="form-control" placeholder="Enter Your Age"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-6">
                                                 <label>Blood Group:</label>
-                                                <select class="form-control selectpicker">
-                                                    <option>A+</option>
-                                                    <option>B+</option>
-                                                    <option>O+</option>
-                                                    <option>AB+</option>
-                                                    <option>A-</option>
-                                                    <option>B-</option>
-                                                    <option>O-</option>
-                                                    <option>AB-</option>
-                                                </select>
+                                                <form:select path="bloodGroup" class="form-control selectpicker">
+                                                    <form:options items="${bloodGroupList}"></form:options>
+                                                </form:select>
                                             </div>
                                             <div class="col-lg-6">
                                                 <label>Email Address:</label>
-                                                <input type="email" class="form-control" placeholder="Enter Your Age"/>
+                                                <form:input path="emailAddress" class="form-control" placeholder="Enter Your Age"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-6">
                                                 <label>Marital Status:</label>
-                                                <select class="form-control selectpicker">
-                                                    <option>Single</option>
-                                                    <option>Married</option>
-                                                    <option>Windowed</option>
-                                                    <option>Divorced</option>
-                                                </select>
+                                                <form:select path="maritalStatus" class="form-control selectpicker">
+                                                    <form:options items="${maritalStatusList}"></form:options>
+                                                </form:select>
                                             </div>
                                             <div class="col-lg-6">
                                                 <label>Pin Code :</label>
-                                                <input type="email" class="form-control" placeholder="Enter Your Age"/>
+                                                <form:input path="pinCode" class="form-control" placeholder="Enter Your Age"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-6">
                                                 <label>Address :</label>
-                                                <textarea class="form-control" name="memo" placeholder="Enter a menu" rows="3"></textarea>
+                                                <form:textarea  path="address" class="form-control" name="memo" placeholder="Enter a menu" rows="3"></form:textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -415,29 +403,36 @@
                                                             </h3>
                                                         </div>
                                                         <div class="card-toolbar">
-                                                            <button type="reset" class="btn btn-primary mr-2">Add Qualification</button>
-                                                            <button type="reset" class="btn btn-secondary">Remove Qualificaton</button>
+                                                            <button type="button" class="btn btn-primary mr-2 add-more-qualification">Add Qualification</button>
+                                                            <button type="button" class="btn btn-primary mr-2 delete-qualification">Remove Qualification</button>
+
                                                         </div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <div class="form-group row">
-                                                            <div class="col-lg-4">
-                                                                <label>Name Of Course:</label>
-                                                                <input type="email" class="form-control" placeholder="Enter full name"/>
-                                                            </div>
-                                                            <div class="col-lg-3">
-                                                                <label>School / University:</label>
-                                                                <input type="email" class="form-control" placeholder="Enter Your Age"/>
-                                                            </div>
-                                                            <div class="col-lg-3">
-                                                                <label>Passing Year:</label>
-                                                                <input type="email" class="form-control" placeholder="Enter Your Age"/>
-                                                            </div>
-                                                            <div class="col-lg-2">
-                                                                <label>Percentage:</label>
-                                                                <input type="email" class="form-control" placeholder="Enter Your Age"/>
-                                                            </div>
-                                                        </div>
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th><input class='check_all' type='checkbox' class="form-control" onclick="select_all()"/></th>
+                                                                <th>SR. No</th>
+                                                                <th>Name Of Course:</th>
+                                                                <th>School / University</th>
+                                                                <th>Passing Year</th>
+                                                                <th>Percentage:</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody class="qualification-body">
+                                                            <c:forEach items="${databean.qualificationInformations}" var="qi" varStatus="i">
+                                                                <tr>
+                                                                    <td><input type='checkbox' class='qualification_case' class="form-control" /></td>
+                                                                    <td><span class="row_no">1.</span></td>
+                                                                    <td><form:input path="qualificationInformations[${i.index}].nameOfCourse" class="form-control"/></td>
+                                                                    <td><form:input path="qualificationInformations[${i.index}].instituteName" class="form-control"/></td>
+                                                                    <td><form:input path="qualificationInformations[${i.index}].passingYear" class="form-control"/></td>
+                                                                    <td><form:input path="qualificationInformations[${i.index}].percentage" class="form-control"/></td>
+                                                                </tr>
+                                                            </c:forEach>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                 </div>
                                             </div>
@@ -453,29 +448,36 @@
                                                             </h3>
                                                         </div>
                                                         <div class="card-toolbar">
-                                                            <button type="reset" class="btn btn-primary mr-2">Add Experience</button>
-                                                            <button type="reset" class="btn btn-secondary">Remove Experience</button>
+                                                            <button type="button" class="btn btn-primary mr-2 add-more-revenue">Add Experience</button>
+                                                            <button type="button" class="btn btn-secondary delete_revenue">Remove Experience</button>
                                                         </div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <div class="form-group row">
-                                                            <div class="col-lg-4">
-                                                                <label>Type OF Revenue</label>
-                                                                <input type="email" class="form-control" placeholder="Enter full name"/>
-                                                            </div>
-                                                            <div class="col-lg-3">
-                                                                <label>Goverment / Private :</label>
-                                                                <input type="email" class="form-control" placeholder="Enter Your Age"/>
-                                                            </div>
-                                                            <div class="col-lg-3">
-                                                                <label>Experience:</label>
-                                                                <input type="email" class="form-control" placeholder="Enter Your Age"/>
-                                                            </div>
-                                                            <div class="col-lg-2">
-                                                                <label>Working Place:</label>
-                                                                <input type="email" class="form-control" placeholder="Enter Your Age"/>
-                                                            </div>
-                                                        </div>
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th><input class='check_all' type='checkbox' class="form-control" onclick="select_all()"/></th>
+                                                                <th>SR. No</th>
+                                                                <th>Type OF Revenue</th>
+                                                                <th>Government / Private</th>
+                                                                <th>Experience in Years</th>
+                                                                <th>Working Place</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody class="revenue-body">
+                                                            <c:forEach items="${databean.revenueInformations}" var="qi" varStatus="i">
+                                                                <tr>
+                                                                    <td><input type='checkbox' class='revenue_case' class="form-control" /></td>
+                                                                    <td><span class="row_no">1.</span></td>
+                                                                    <td><form:input path="revenueInformations[${i.index}].typeOFRevenue" class="form-control"/></td>
+                                                                    <td><form:input path="revenueInformations[${i.index}].typeOfJob" class="form-control"/></td>
+                                                                    <td><form:input path="revenueInformations[${i.index}].experience" class="form-control"/></td>
+                                                                    <td><form:input path="revenueInformations[${i.index}].workingPlace" class="form-control"/></td>
+                                                                </tr>
+                                                            </c:forEach>
+                                                            </tbody>
+                                                        </table>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -489,7 +491,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                </form:form>
                             </div>
                         </div>
                     </div>
@@ -525,36 +527,6 @@
     <!--end::Page-->
 </div>
 <!--end::Main-->
-
-<!--begin::Demo Panel-->
-<div id="kt_demo_panel" class="offcanvas offcanvas-right p-10">
-    <!--begin::Header-->
-    <div class="offcanvas-header d-flex align-items-center justify-content-between pb-7">
-        <h4 class="font-weight-bold m-0">Select A Demo</h4>
-        <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_demo_panel_close">
-            <i class="ki ki-close icon-xs text-muted"></i>
-        </a>
-    </div>
-    <!--end::Header-->
-</div>
-<!--end::Demo Panel-->
-<script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
-<!--begin::Global Config(global config for global JS scripts)-->
-<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#6993FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#E1E9FF", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
-<!--end::Global Config-->
-<!--begin::Global Theme Bundle(used by all pages)-->
-<script src="assets/plugins/global/plugins.bundle.js"></script>
-<script src="assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
-<script src="assets/js/scripts.bundle.js"></script>
-<!--end::Global Theme Bundle-->
-<!--begin::Page Vendors(used by this page)-->
-<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-<script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM"></script>
-<script src="assets/plugins/custom/gmaps/gmaps.js"></script>
-<!--end::Page Vendors-->
-<!--begin::Page Scripts(used by this page)-->
-<script src="assets/js/pages/widgets.js"></script>
-<!--end::Page Scripts-->
 </body>
 <!--begin::Global Config(global config for global JS scripts)-->
 <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
@@ -570,5 +542,87 @@
 <!--begin::Page Scripts(used by this page)-->
 <script src="<c:url value="js/pages/widgets.js"></c:url>"></script>
 <!--end::Page Scripts-->
+
+<script type="text/javascript">
+    function select_all() {
+        $('input[class=case]:checkbox').each(function(){
+            if($('input[class=check_all]:checkbox:checked').length == 0){
+                $(this).prop("checked", false);
+            } else {
+                $(this).prop("checked", true);
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        var index = $('.qualification-body').length;
+        var index_revenue = $('.revenue-body').length;
+
+        $(".add-more-qualification").click(function(){
+            index++;
+            var data="<tr><td><input type='checkbox' class='qualification_case' class='form-control' /></td><td><span class='row_no'>"+index+"</span></td><td><input path='qualificationInformations["+index+"].nameOfCourse' class='form-control' placeholder='Enter full name'/></td><td><input path='qualificationInformations["+index+"].instituteName' class='form-control' placeholder='Enter Your Age'/></td><td><input path='qualificationInformations["+index+"].passingYear' class='form-control' placeholder='Enter Your Age'/></td><td><input path='qualificationInformations["+index+"].percentage' class='form-control' placeholder='Enter Your Age'/></td></tr>";
+            $(".qualification-body").append(data);
+
+        });
+
+        $(".add-more-revenue").click(function(){
+            index_revenue++;
+            var data="<tr><td><input type='checkbox' class='revenue_case' class='form-control' /></td><td><span class='row_no'>"+index_revenue+"</span></td><td><input path='revenueInformations["+index_revenue+"].typeOFRevenue' class='form-control' placeholder='Enter full name'/></td><td><input path='revenueInformations["+index_revenue+"].typeOfJob' class='form-control' placeholder='Enter Your Age'/></td><td><input path='revenueInformations["+index+"].experience' class='form-control' placeholder='Enter Your Age'/></td><td><input path='revenueInformations["+index_revenue+"].workingPlace' class='form-control' placeholder='Enter Your Age'/></td></tr>";
+            $(".revenue-body").append(data);
+
+        });
+
+        $(".delete-qualification").on('click', function() {
+            $('.qualification_case:checkbox:checked').parents("tr").remove();
+            $('.row_no').each((k,ele)=>{
+                $(ele).html(k+1+'.')
+            });
+            var row=0;
+            $(".qualification-body tr").each(function() {
+                $(this).find("td:nth-child(2)").text(row+1);
+                $(this).find("td:nth-child(3) input").attr('name','qualificationInformations['+row+'].nameOfCourse');
+                $(this).find("td:nth-child(4) input").attr('name','qualificationInformations['+row+'].instituteName');
+                $(this).find("td:nth-child(5) input").attr('name','qualificationInformations['+row+'].passingYear');
+                $(this).find("td:nth-child(6) input").attr('name','qualificationInformations['+row+'].percentage');
+                $(this).find("td:nth-child(3) input").attr('id','qualificationInformations['+row+'].nameOfCourse');
+                $(this).find("td:nth-child(4) input").attr('id','qualificationInformations['+row+'].instituteName');
+                $(this).find("td:nth-child(5) input").attr('id','qualificationInformations['+row+'].passingYear');
+                $(this).find("td:nth-child(6) input").attr('id','qualificationInformations['+row+'].percentage');
+                $(this).find("td:nth-child(3) input").attr('path','qualificationInformations['+row+'].nameOfCourse');
+                $(this).find("td:nth-child(4) input").attr('path','qualificationInformations['+row+'].instituteName');
+                $(this).find("td:nth-child(5) input").attr('path','qualificationInformations['+row+'].passingYear');
+                $(this).find("td:nth-child(6) input").attr('path','qualificationInformations['+row+'].percentage');
+                row++;
+            });
+        });
+
+        $(".delete_revenue").on('click', function() {
+            $('.revenue_case:checkbox:checked').parents("tr").remove();
+            $('.row_no').each((k,ele)=>{
+                $(ele).html(k+1+'.')
+            });
+            var row=0;
+            $(".revenue-body tr").each(function() {
+                $(this).find("td:nth-child(2)").text(row+1);
+                $(this).find("td:nth-child(3) input").attr('name','revenueInformations['+row+'].typeOFRevenue');
+                $(this).find("td:nth-child(4) input").attr('name','revenueInformations['+row+'].typeOfJob');
+                $(this).find("td:nth-child(5) input").attr('name','revenueInformations['+row+'].experience');
+                $(this).find("td:nth-child(6) input").attr('name','revenueInformations['+row+'].workingPlace');
+                $(this).find("td:nth-child(3) input").attr('id','revenueInformations['+row+'].typeOFRevenue');
+                $(this).find("td:nth-child(4) input").attr('id','revenueInformations['+row+'].typeOfJob');
+                $(this).find("td:nth-child(5) input").attr('id','revenueInformations['+row+'].experience');
+                $(this).find("td:nth-child(6) input").attr('id','revenueInformations['+row+'].workingPlace');
+                $(this).find("td:nth-child(3) input").attr('path','revenueInformations['+row+'].typeOFRevenue');
+                $(this).find("td:nth-child(4) input").attr('path','revenueInformations['+row+'].typeOfJob');
+                $(this).find("td:nth-child(5) input").attr('path','revenueInformations['+row+'].experience');
+                $(this).find("td:nth-child(6) input").attr('path','revenueInformations['+row+'].workingPlace');
+                row++;
+            });
+        });
+
+    });
+
+
+</script>
 
 </html>
