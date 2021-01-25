@@ -2,18 +2,25 @@ package com.vismay.membersportal.controllers;
 
 import com.vismay.membersportal.databeans.MarqueeDataBean;
 import com.vismay.membersportal.exceptions.FileStorageException;
+import com.vismay.membersportal.exceptions.MyFileNotFoundException;
 import com.vismay.membersportal.services.MarqueeService;
+import com.vismay.membersportal.validators.MarqueeValidators;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class MarqueeController {
 
     @Autowired
     private MarqueeService marqueeService;
+
+    @Autowired
+    private MarqueeValidators marqueeValidators;
 
     @GetMapping(path = "/create-marquee")
     public String getRegisteredMarquee(Model model){
@@ -22,9 +29,22 @@ public class MarqueeController {
     }
 
     @PostMapping(path = "/create-marquee")
-    public String postRegisteredMarquee(@ModelAttribute MarqueeDataBean marqueeDataBean, @RequestParam("file") MultipartFile multipartFile) throws FileStorageException {
-        marqueeService.saveMarquee(marqueeDataBean,multipartFile);
-        return "create-marquee";
+    public String postRegisteredMarquee(@ModelAttribute MarqueeDataBean marqueeDataBean,
+                                        @RequestParam("file") MultipartFile multipartFile,
+                                        BindingResult result,
+                                        Model model, RedirectAttributes redirectAttributes) throws FileStorageException {
+        marqueeValidators.validate(marqueeDataBean,result);
+        System.out.printf("errors"+result);
+        if (!result.hasErrors())
+        {
+            marqueeService.saveMarquee(marqueeDataBean,multipartFile);
+            redirectAttributes.addFlashAttribute("message","Marquee Registered Successfully.");
+            return "redirect:/search-marquee";
+        }else{
+            model.addAttribute("databean",marqueeDataBean);
+            return "create-marquee";
+        }
+
     }
 
 
@@ -32,6 +52,20 @@ public class MarqueeController {
     public String getViewMarquee(Model model,@RequestParam("id") Long Id){
         model.addAttribute("databean",marqueeService.getMarqueeFromId(Id));
         return "view-marquee";
+    }
+
+
+    @GetMapping(path = "/edit-marquee")
+    public String getEditMarquee(Model model,@RequestParam("id") Long Id){
+        model.addAttribute("databean",marqueeService.getMarqueeFromId(Id));
+        return "create-marquee";
+    }
+
+    @PostMapping(path = "/edit-marquee")
+    public String postEditMarquee(Model model,@RequestParam("id") Long Id,@ModelAttribute MarqueeDataBean marqueeDataBean, @RequestParam("file") MultipartFile multipartFile) throws MyFileNotFoundException, FileStorageException {
+        marqueeDataBean.setMarqueeID(Id);
+        marqueeService.updateMarquee(marqueeDataBean,multipartFile);
+        return "redirect:/search-marquee";
     }
 
 

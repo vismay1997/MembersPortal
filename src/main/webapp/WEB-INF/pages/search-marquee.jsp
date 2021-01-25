@@ -341,9 +341,9 @@
                                                         <label class="mr-3 mb-0 d-none d-md-block">Status:</label>
                                                         <select class="form-control" id="kt_datatable_search_status">
                                                             <option value="">All</option>
-                                                            <option value="1">Pending</option>
-                                                            <option value="3">Canceled</option>
-                                                            <option value="4">Live</option>
+                                                            <option value="active">Active</option>
+                                                            <option value="cancled">Canceled</option>
+                                                            <option value="live">Live</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -380,8 +380,8 @@
                                             <td>${item.description}</td>
                                             <td>${item.startDateTime}</td>
                                             <td>${item.endDateTime}</td>
-                                            <td class="text-right"><a href="/view-marquee-detail?id=${item.marqueeID}" class="btn btn-primary">View</a></td>
-                                            <td class="text-right"><a href="/edit-marquee-detail?id=${item.marqueeID}" class="btn btn-primary">Edit</a></td>
+                                            <td class="text-right"><a href="/view-marquee?id=${item.marqueeID}" class="btn btn-primary">View Marquee</a></td>
+                                            <td class="text-right"><a href="/edit-marquee?id=${item.marqueeID}" class="btn btn-primary">Edit Marquee</a></td>
                                             <td>${item.status}</td>
                                         </tr>
                                     </c:forEach>
@@ -444,7 +444,7 @@
 <script src="<c:url value="plugins/global/plugins.bundle.js"></c:url>"></script>
 <script src="<c:url value="plugins/custom/prismjs/prismjs.bundle.js"></c:url>"></script>
 <script src="<c:url value="js/scripts.bundle.js"></c:url>"></script>
-<script src="<c:url value="js/pages/crud/ktdatatable/base/html-table.js"></c:url>"></script>
+<script src="<c:url value="js/customs/searchmarquee.js"></c:url>"></script>
 
 </body>
 </html>

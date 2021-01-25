@@ -7,6 +7,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <title>Create Marquee</title>
@@ -326,7 +327,7 @@
                             <div class="card-header">
                                 <div class="card-title">
                                     <h3 class="card-label">
-                                        Create Marquee Section
+                                        Create Marquee Section <spring:message code="${error.message.required}" /> <form:errors path="*" cssClass="error"/>
                                     </h3>
                                 </div>
                             </div>
@@ -337,35 +338,37 @@
                                             <div class="col-lg-12">
                                                 <label>Marquee Title</label>
                                                 <form:input path="title" class="form-control"/>
+                                                <form:errors path="title" cssClass="error"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-12">
                                                 <label>Marquee Image / Logo:</label>
                                                 <div class="custom-file">
+                                                    <form:hidden path="image" />
                                                     <input type="file" name="file" class="custom-file-input" id="customFile"/>
                                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                                 </div>
+                                                <form:errors path="image" cssClass="error"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <label>Marquee Description:</label>
-                                                <form:textarea  path="description"  class="form-control" rows="3"></form:textarea>
+                                                <form:textarea  type="hidden" path="description"  class="form-control" rows="3"></form:textarea>
+                                                <form:errors path="description" cssClass="error"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-6">
                                                 <label>Marquee Start Timing:</label>
-                                                <div class="col-lg-4 col-md-9 col-sm-12">
-                                                    <form:input type="date" path="startDateTime" class="form-control"  placeholder="Select date"/>
-                                                </div>
+                                                <form:input type="date" path="startDateTime" class="form-control"  placeholder="Select date"/>
+                                                <form:errors path="startDateTime" cssClass="error"/>
                                             </div>
                                             <div class="col-lg-6">
                                                 <label>Marquee Start Timing:</label>
-                                                <div class="col-lg-4 col-md-9 col-sm-12">
-                                                    <form:input type="date" path="endDateTime" class="form-control" placeholder="Select date"/>
-                                                </div>
+                                                <form:input type="date" path="endDateTime" class="form-control" placeholder="Select date"/>
+                                                <form:errors path="endDateTime" cssClass="error"/>
                                             </div>
                                         </div>
                                     </div>
