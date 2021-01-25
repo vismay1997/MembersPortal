@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.text.ParseException;
+
 @Controller
 public class MarqueeController {
 
@@ -29,21 +31,21 @@ public class MarqueeController {
     }
 
     @PostMapping(path = "/create-marquee")
-    public String postRegisteredMarquee(@ModelAttribute MarqueeDataBean marqueeDataBean,
+    public String postRegisteredMarquee(@ModelAttribute("databean") MarqueeDataBean marqueeDataBean,
                                         @RequestParam("file") MultipartFile multipartFile,
                                         BindingResult result,
-                                        Model model, RedirectAttributes redirectAttributes) throws FileStorageException {
-        marqueeValidators.validate(marqueeDataBean,result);
-        System.out.printf("errors"+result);
+                                        Model model, RedirectAttributes redirectAttributes) throws FileStorageException, ParseException {
+        marqueeValidators.validate(marqueeDataBean,result,multipartFile);
         if (!result.hasErrors())
         {
             marqueeService.saveMarquee(marqueeDataBean,multipartFile);
-            redirectAttributes.addFlashAttribute("message","Marquee Registered Successfully.");
             return "redirect:/search-marquee";
         }else{
             model.addAttribute("databean",marqueeDataBean);
+            redirectAttributes.addFlashAttribute("message","SuccessFully");
             return "create-marquee";
         }
+
 
     }
 
@@ -62,10 +64,21 @@ public class MarqueeController {
     }
 
     @PostMapping(path = "/edit-marquee")
-    public String postEditMarquee(Model model,@RequestParam("id") Long Id,@ModelAttribute MarqueeDataBean marqueeDataBean, @RequestParam("file") MultipartFile multipartFile) throws MyFileNotFoundException, FileStorageException {
+    public String postEditMarquee(Model model,@RequestParam("id") Long Id,@ModelAttribute MarqueeDataBean marqueeDataBean,
+                                  @RequestParam("file") MultipartFile multipartFile,BindingResult result,
+                                  RedirectAttributes redirectAttributes) throws MyFileNotFoundException, FileStorageException {
         marqueeDataBean.setMarqueeID(Id);
-        marqueeService.updateMarquee(marqueeDataBean,multipartFile);
-        return "redirect:/search-marquee";
+        marqueeValidators.validate(marqueeDataBean,result);
+
+        if (!result.hasErrors())
+        {
+            marqueeService.updateMarquee(marqueeDataBean,multipartFile);
+            return "redirect:/search-marquee";
+        }else{
+            model.addAttribute("databean",marqueeDataBean);
+            redirectAttributes.addFlashAttribute("message","SuccessFully");
+            return "create-marquee";
+        }
     }
 
 

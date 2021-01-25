@@ -376,7 +376,11 @@
                                         <tr>
                                             <td>${i.index+1}</td>
                                             <td>${item.title}</td>
-                                            <td><img src="/getimage?id=${item.image}" height="50px" width="50px"></td>
+                                            <td>
+                                                <c:if test="${item.image != ''}">
+                                                    <img src="/getimage?id=${item.image}" height="50px" width="50px">
+                                                </c:if>
+                                            </td>
                                             <td>${item.description}</td>
                                             <td>${item.startDateTime}</td>
                                             <td>${item.endDateTime}</td>
