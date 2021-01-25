@@ -120,7 +120,7 @@ public class MemberRegistrationController {
 
     @PostMapping(path = "/edit-member")
     public String postEditMarquee(Model model,@RequestParam("id") Long Id,@ModelAttribute MemberRegistrationDatabean memberRegistrationDatabean,
-                                  @RequestParam("file") MultipartFile multipartFile,BindingResult result,
+                                  BindingResult result,
                                   RedirectAttributes redirectAttributes) throws MyFileNotFoundException, FileStorageException {
         memberRegistrationDatabean.setMemberId(Id);
         memberRegisterValidator.validate(memberRegistrationDatabean,result);
@@ -130,7 +130,22 @@ public class MemberRegistrationController {
             registerMemberService.updateMember(memberRegistrationDatabean);
             return "redirect:/search-marquee";
         }else{
+            List<String> bloodGroupList=new ArrayList<>();
+            bloodGroupList.add("A-");bloodGroupList.add("A-");
+            bloodGroupList.add("B+");bloodGroupList.add("B-");
+            bloodGroupList.add("AB+");bloodGroupList.add("AB-");
+            bloodGroupList.add("O+");bloodGroupList.add("O-");
+            bloodGroupList.add("Not Given");
+            model.addAttribute("bloodGroupList",bloodGroupList);
+
+            List<String> maritalStatusList=new ArrayList<>();
+            maritalStatusList.add("Married");
+            bloodGroupList.add("Un Married");
+            maritalStatusList.add("Single");
+            maritalStatusList.add("Not Given");
+            model.addAttribute("maritalStatusList",maritalStatusList);
             model.addAttribute("databean",memberRegistrationDatabean);
+
             redirectAttributes.addFlashAttribute("message","SuccessFully");
             return "member-registration";
         }
