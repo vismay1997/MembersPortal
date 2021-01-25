@@ -20,13 +20,14 @@ public class MemberRegistrationDatabean {
     private String maritalStatus;
     private String pinCode;
     private String  address;
+    private String status;
 
-    @OneToMany(mappedBy = "memberRegistrationDatabean", fetch = FetchType.LAZY,
+    @OneToMany(fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private List<QualificationInformation> qualificationInformations;
 
 
-    @OneToMany(mappedBy = "memberRegistrationDatabean", fetch = FetchType.LAZY,
+    @OneToMany(fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private List<RevenueInformation> revenueInformations;
 
@@ -133,6 +134,14 @@ public class MemberRegistrationDatabean {
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override

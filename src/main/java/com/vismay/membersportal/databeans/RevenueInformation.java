@@ -12,10 +12,6 @@ public class RevenueInformation {
     private String experience;
     private String WorkingPlace;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "memberId", nullable = false)
-    private MemberRegistrationDatabean memberRegistrationDatabean;
-
 
     public Long getQualificationId() {
         return QualificationId;
@@ -65,7 +61,6 @@ public class RevenueInformation {
                 ", typeOfJob='" + typeOfJob + '\'' +
                 ", experience='" + experience + '\'' +
                 ", WorkingPlace='" + WorkingPlace + '\'' +
-                ", memberRegistrationDatabean=" + memberRegistrationDatabean +
                 '}';
     }
 

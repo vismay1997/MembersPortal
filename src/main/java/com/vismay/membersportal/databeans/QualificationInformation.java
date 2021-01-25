@@ -14,10 +14,6 @@ public class QualificationInformation {
     private String passingYear;
     private String percentage;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "memberId", nullable = false)
-    private MemberRegistrationDatabean memberRegistrationDatabean;
-
     public Long getQualificationId() {
         return qualificationId;
     }
@@ -58,14 +54,6 @@ public class QualificationInformation {
         this.percentage = percentage;
     }
 
-    public MemberRegistrationDatabean getMemberRegistrationDatabean() {
-        return memberRegistrationDatabean;
-    }
-
-    public void setMemberRegistrationDatabean(MemberRegistrationDatabean memberRegistrationDatabean) {
-        this.memberRegistrationDatabean = memberRegistrationDatabean;
-    }
-
     @Override
     public String toString() {
         return "QualificationInformation{" +
@@ -74,7 +62,6 @@ public class QualificationInformation {
                 ", instituteName='" + instituteName + '\'' +
                 ", passingYear='" + passingYear + '\'' +
                 ", percentage='" + percentage + '\'' +
-                ", memberRegistrationDatabean=" + memberRegistrationDatabean +
                 '}';
     }
 }
