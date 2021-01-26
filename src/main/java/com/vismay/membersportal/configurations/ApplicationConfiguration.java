@@ -12,7 +12,7 @@ public class ApplicationConfiguration  implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-            registry.addResourceHandler("/resources/**")
+            registry.addResourceHandler("/cdn/**")
                     .addResourceLocations("/WEB-INF/resources/");
     }
 
