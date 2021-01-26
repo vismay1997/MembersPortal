@@ -10,7 +10,7 @@ public class RevenueInformation {
     private String typeOFRevenue;
     private String typeOfJob;
     private String experience;
-    private String WorkingPlace;
+    private String workingPlace;
 
 
     public Long getQualificationId() {
@@ -46,11 +46,11 @@ public class RevenueInformation {
     }
 
     public String getWorkingPlace() {
-        return WorkingPlace;
+        return workingPlace;
     }
 
-    public void setWorkingPlace(String workingPlace) {
-        WorkingPlace = workingPlace;
+    public void setWorkingPlace(String worlongPlace) {
+        this.workingPlace = worlongPlace;
     }
 
     @Override
@@ -60,7 +60,7 @@ public class RevenueInformation {
                 ", typeOFRevenue='" + typeOFRevenue + '\'' +
                 ", typeOfJob='" + typeOfJob + '\'' +
                 ", experience='" + experience + '\'' +
-                ", WorkingPlace='" + WorkingPlace + '\'' +
+                ", WorkingPlace='" + workingPlace + '\'' +
                 '}';
     }
 

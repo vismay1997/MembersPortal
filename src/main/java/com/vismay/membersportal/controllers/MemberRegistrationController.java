@@ -71,14 +71,14 @@ public class MemberRegistrationController {
 
     @PostMapping(path = "/member-registration")
     public String RegisterMember(@ModelAttribute("databean") MemberRegistrationDatabean memberRegistrationDatabean,
-                                        BindingResult result,
+                                 @RequestParam("profilePic") MultipartFile multipartFile,BindingResult result,
                                         Model model, RedirectAttributes redirectAttributes) throws FileStorageException, ParseException {
-        memberRegisterValidator.validate(memberRegistrationDatabean,result);
+        memberRegisterValidator.validate(memberRegistrationDatabean,result,multipartFile);
         System.out.println(result);
         if (!result.hasErrors())
         {
             System.out.println(memberRegistrationDatabean);
-            registerMemberService.saveMember(memberRegistrationDatabean);
+            registerMemberService.saveMember(memberRegistrationDatabean,multipartFile);
             redirectAttributes.addFlashAttribute("message","SuccessFully");
             return "redirect:/search-member";
         }else{
@@ -106,7 +106,7 @@ public class MemberRegistrationController {
 
 
     @GetMapping(path = "/view-member")
-    public String getViewMarquee(Model model,@RequestParam("id") Long Id){
+    public String getViewMember(Model model,@RequestParam("id") Long Id){
         model.addAttribute("databean",registerMemberService.getMemberFromId(Id));
         return "view-member";
     }
@@ -114,21 +114,35 @@ public class MemberRegistrationController {
 
     @GetMapping(path = "/edit-member")
     public String getEditMarquee(Model model,@RequestParam("id") Long Id){
+        List<String> bloodGroupList=new ArrayList<>();
+        bloodGroupList.add("A-");bloodGroupList.add("A-");
+        bloodGroupList.add("B+");bloodGroupList.add("B-");
+        bloodGroupList.add("AB+");bloodGroupList.add("AB-");
+        bloodGroupList.add("O+");bloodGroupList.add("O-");
+        bloodGroupList.add("Not Given");
+        model.addAttribute("bloodGroupList",bloodGroupList);
+
+        List<String> maritalStatusList=new ArrayList<>();
+        maritalStatusList.add("Married");
+        bloodGroupList.add("Un Married");
+        maritalStatusList.add("Single");
+        maritalStatusList.add("Not Given");
+        model.addAttribute("maritalStatusList",maritalStatusList);
         model.addAttribute("databean",registerMemberService.getMemberFromId(Id));
         return "member-registration";
     }
 
     @PostMapping(path = "/edit-member")
-    public String postEditMarquee(Model model,@RequestParam("id") Long Id,@ModelAttribute MemberRegistrationDatabean memberRegistrationDatabean,
-                                  BindingResult result,
+    public String postEditMarquee(Model model,@RequestParam("id") Long Id,@ModelAttribute("databean") MemberRegistrationDatabean memberRegistrationDatabean,
+                                  @RequestParam("profilePic") MultipartFile multipartFile,BindingResult result,
                                   RedirectAttributes redirectAttributes) throws MyFileNotFoundException, FileStorageException {
         memberRegistrationDatabean.setMemberId(Id);
         memberRegisterValidator.validate(memberRegistrationDatabean,result);
-
+        System.out.println(result);
         if (!result.hasErrors())
         {
-            registerMemberService.updateMember(memberRegistrationDatabean);
-            return "redirect:/search-marquee";
+            registerMemberService.updateMember(memberRegistrationDatabean,multipartFile);
+            return "redirect:/search-member";
         }else{
             List<String> bloodGroupList=new ArrayList<>();
             bloodGroupList.add("A-");bloodGroupList.add("A-");
@@ -143,9 +157,9 @@ public class MemberRegistrationController {
             bloodGroupList.add("Un Married");
             maritalStatusList.add("Single");
             maritalStatusList.add("Not Given");
+
             model.addAttribute("maritalStatusList",maritalStatusList);
             model.addAttribute("databean",memberRegistrationDatabean);
-
             redirectAttributes.addFlashAttribute("message","SuccessFully");
             return "member-registration";
         }

@@ -350,6 +350,34 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-3">
+                                                <label>Profile Pic:</label>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div><img src="/getimage?id=${databean.image}" height="50px" width="50px"></div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label>Address :</label>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div>${databean.address}</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-3">
+                                                <label>Chief of Family::</label>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div>${databean.chiefOfFamily}</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label>Chief Name:</label>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div>${databean.chiefName}</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-3">
                                                 <label>Age:</label>
                                             </div>
                                             <div class="col-lg-3">
@@ -396,12 +424,6 @@
                                             </div>
                                             <div class="col-lg-3">
                                                 <div>${databean.pinCode}</div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <label>Address :</label>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div>${databean.address}</div>
                                             </div>
                                         </div>
                                         <div class="form-group row">

@@ -21,6 +21,11 @@ public class MemberRegistrationDatabean {
     private String pinCode;
     private String  address;
     private String status;
+    private String image;
+    private String chiefOfFamily;
+    private String chiefName;
+    private String gender;
+
 
     @OneToMany(fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
@@ -144,12 +149,37 @@ public class MemberRegistrationDatabean {
         this.status = status;
     }
 
+    public String getChiefOfFamily() {
+        return chiefOfFamily;
+    }
+
+    public void setChiefOfFamily(String cheafOfFamily) {
+        this.chiefOfFamily = cheafOfFamily;
+    }
+
+    public String getChiefName() {
+        return chiefName;
+    }
+
+    public void setChiefName(String cheafName) {
+        this.chiefName = cheafName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
         return "MemberRegistrationDatabean{" +
                 "memberId=" + memberId +
                 ", fullName='" + fullName + '\'' +
                 ", birthDate='" + birthDate + '\'' +
+                ", age='" + age + '\'' +
                 ", mobileNo='" + mobileNo + '\'' +
                 ", phoneNo='" + phoneNo + '\'' +
                 ", bloodGroup='" + bloodGroup + '\'' +
@@ -157,9 +187,22 @@ public class MemberRegistrationDatabean {
                 ", maritalStatus='" + maritalStatus + '\'' +
                 ", pinCode='" + pinCode + '\'' +
                 ", address='" + address + '\'' +
-                ", revenueInformations=" + revenueInformations +
+                ", status='" + status + '\'' +
+                ", image='" + image + '\'' +
+                ", chiefOfFamily='" + chiefOfFamily + '\'' +
+                ", chiefName='" + chiefName + '\'' +
+                ", gender='" + gender + '\'' +
                 ", qualificationInformations=" + qualificationInformations +
+                ", revenueInformations=" + revenueInformations +
                 '}';
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
 }

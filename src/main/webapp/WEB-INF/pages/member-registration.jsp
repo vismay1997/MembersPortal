@@ -332,7 +332,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form:form modelAttribute="databean" class="form">
+                                <form:form modelAttribute="databean" class="form"  enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="form-group row">
                                             <div class="col-lg-6">
@@ -348,9 +348,33 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-6">
+                                                <label>Chief of Family:</label>
+                                                <form:select path="chiefOfFamily" class="form-control selectpicker">
+                                                    <form:option  value="Yes" label="Yes"></form:option>
+                                                    <form:option value="No" label="No"></form:option>
+                                                </form:select>
+                                                <form:errors path="chiefOfFamily" cssClass="text-danger"/>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label>Chief Name:</label>
+                                                <form:input path="chiefName" class="form-control" placeholder="Enter Your BirthDate"/>
+                                                <form:errors path="chiefName" cssClass="text-danger"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-6">
                                                 <label>Age:</label>
                                                 <form:input path="age" class="form-control" placeholder="Enter Your Age"/>
                                                 <form:errors path="age" cssClass="text-danger"/>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label>Marquee Image / Logo:</label>
+                                                <div class="custom-file">
+                                                    <form:hidden path="image" />
+                                                    <input type="file" name="profilePic" class="custom-file-input" id="customFile"/>
+                                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                                </div>
+                                                <form:errors path="image" cssClass="text-danger"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -398,6 +422,15 @@
                                                 <label>Address :</label>
                                                 <form:textarea  path="address" class="form-control" name="memo" placeholder="Enter a menu" rows="3"></form:textarea>
                                                 <form:errors path="address" cssClass="text-danger"/>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label>Gender :</label>
+                                                <form:select path="gender" class="form-control selectpicker">
+                                                    <form:option  value="Male" label="Male"></form:option>
+                                                    <form:option value="Female" label="Female"></form:option>
+                                                    <form:option value="Not Given" label="Not Given"></form:option>
+                                                </form:select>
+                                                <form:errors path="pinCode" cssClass="text-danger"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -493,19 +526,19 @@
                                                                     <td><span class="row_no">1.</span></td>
                                                                     <td>
                                                                         <form:input path="revenueInformations[${i.index}].typeOFRevenue" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].percentage" cssClass="text-danger"/>
+                                                                        <form:errors path="revenueInformations[${i.index}].typeOFRevenue" cssClass="text-danger"/>
                                                                     </td>
                                                                     <td>
                                                                         <form:input path="revenueInformations[${i.index}].typeOfJob" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].percentage" cssClass="text-danger"/>
+                                                                        <form:errors path="revenueInformations[${i.index}].typeOfJob" cssClass="text-danger"/>
                                                                     </td>
                                                                     <td>
                                                                         <form:input path="revenueInformations[${i.index}].experience" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].percentage" cssClass="text-danger"/>
+                                                                        <form:errors path="revenueInformations[${i.index}].experience" cssClass="text-danger"/>
                                                                     </td>
                                                                     <td>
                                                                         <form:input path="revenueInformations[${i.index}].workingPlace" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].percentage" cssClass="text-danger"/>
+                                                                        <form:errors path="revenueInformations[${i.index}].workingPlace" cssClass="text-danger"/>
                                                                     </td>
                                                                 </tr>
                                                             </c:forEach>
@@ -594,14 +627,14 @@
 
         $(".add-more-qualification").click(function(){
             index++;
-            var data="<tr><td><input type='checkbox' class='qualification_case' class='form-control' /></td><td><span class='row_no'>"+index+"</span></td><td><input path='qualificationInformations["+index+"].nameOfCourse' class='form-control'/></td><td><input path='qualificationInformations["+index+"].instituteName' class='form-control'/></td><td><input path='qualificationInformations["+index+"].passingYear' class='form-control'/></td><td><input path='qualificationInformations["+index+"].percentage' class='form-control'/></td></tr>";
+            var data="<tr><td><input type='checkbox' class='qualification_case' class='form-control' /></td><td><span class='row_no'>"+index+"</span></td><td><input name='qualificationInformations["+index+"].nameOfCourse' class='form-control'/></td><td><input name='qualificationInformations["+index+"].instituteName' class='form-control'/></td><td><input name='qualificationInformations["+index+"].passingYear' class='form-control'/></td><td><input name='qualificationInformations["+index+"].percentage' class='form-control'/></td></tr>";
             $(".qualification-body").append(data);
 
         });
 
         $(".add-more-revenue").click(function(){
             index_revenue++;
-            var data="<tr><td><input type='checkbox' class='revenue_case' class='form-control' /></td><td><span class='row_no'>"+index_revenue+"</span></td><td><input path='revenueInformations["+index_revenue+"].typeOFRevenue' class='form-control'/></td><td><input path='revenueInformations["+index_revenue+"].typeOfJob' class='form-control'/></td><td><input path='revenueInformations["+index+"].experience' class='form-control'/></td><td><input path='revenueInformations["+index_revenue+"].workingPlace' class='form-control'/></td></tr>";
+            var data="<tr><td><input type='checkbox' class='revenue_case' class='form-control' /></td><td><span class='row_no'>"+index_revenue+"</span></td><td><input name='revenueInformations["+index_revenue+"].typeOFRevenue' class='form-control'/></td><td><input name='revenueInformations["+index_revenue+"].typeOfJob' class='form-control'/></td><td><input name='revenueInformations["+index_revenue+"].experience' class='form-control'/></td><td><input name='revenueInformations["+index_revenue+"].workingPlace' class='form-control'/></td></tr>";
             $(".revenue-body").append(data);
 
         });

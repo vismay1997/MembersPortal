@@ -18,7 +18,12 @@ public class RegisterMemberService {
     @Autowired
     private RegisterMemberDao registerMemberDao;
 
-    public MemberRegistrationDatabean saveMember(MemberRegistrationDatabean memberRegistrationDatabean) {
+    @Autowired
+    private DBFileStorageService dbFileStorageService;
+
+    public MemberRegistrationDatabean saveMember(MemberRegistrationDatabean memberRegistrationDatabean, MultipartFile multipartFile) throws FileStorageException {
+        FilesUploadDataBean filesUploadDataBean = dbFileStorageService.storeFile(multipartFile);
+        memberRegistrationDatabean.setImage(filesUploadDataBean.getId());
         memberRegistrationDatabean.setStatus("Active");
         return registerMemberDao.save(memberRegistrationDatabean);
     }
@@ -31,7 +36,17 @@ public class RegisterMemberService {
         return registerMemberDao.findById(id).get();
     }
 
-    public MemberRegistrationDatabean updateMember(MemberRegistrationDatabean memberRegistrationDatabean) throws FileStorageException, MyFileNotFoundException {
+    public MemberRegistrationDatabean updateMember(MemberRegistrationDatabean memberRegistrationDatabean, MultipartFile multipartFile) throws FileStorageException, MyFileNotFoundException {
+        FilesUploadDataBean filesUploadDataBean;
+
+        if (!multipartFile.isEmpty()){
+            filesUploadDataBean = dbFileStorageService.storeFile(multipartFile);
+            memberRegistrationDatabean.setImage(filesUploadDataBean.getId());
+        }else{
+            filesUploadDataBean = dbFileStorageService.getFile(memberRegistrationDatabean.getImage());
+            memberRegistrationDatabean.setImage(filesUploadDataBean.getId());
+        }
+
         return registerMemberDao.save(memberRegistrationDatabean);
     }
 
