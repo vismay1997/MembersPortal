@@ -32,7 +32,7 @@ public class MemberRegistrationController {
     @Autowired
     private RegisterMemberService registerMemberService;
 
-    @GetMapping(path = "/member-registration")
+    @GetMapping(path = "/create-member")
     public String getRegisterMember(Model model){
 
        MemberRegistrationDatabean databean= new MemberRegistrationDatabean();
