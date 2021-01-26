@@ -1,33 +1,25 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: vismay
-  Date: 1/23/2021
-  Time: 12:19 PM
+  User: Vismay Patel
+  Date: 1/24/2021
+  Time: 3:43 PM
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
-    <title>Home Page Section</title>
-    <link href="<c:url value="/resources/plugins/global/plugins.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="/resources/plugins/custom/prismjs/prismjs.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="/resources/css/style.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
-    <!--end::Global Theme Styles-->
-    <!--begin::Layout Themes(used by all pages)-->
-    <link href="<c:url value="/resources/css/themes/layout/header/base/light.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="/resources/css/themes/layout/header/menu/light.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="/resources/css/themes/layout/brand/dark.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="/resources/css/themes/layout/aside/dark.css"></c:url>" rel="stylesheet" type="text/css" />
+    <title>Search And Manage Commitee</title>
+    <link href="<c:url value="/cdn/plugins/global/plugins.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/cdn/plugins/custom/prismjs/prismjs.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/cdn/css/style.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
 </head>
-<body id="kt_body" style="background-image: url(assets/media/bg/bg-10.jpg)" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
+<body id="kt_body" style="background-image: url(media/bg/bg-10.jpg)" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
 <!--begin::Main-->
 <!--begin::Header Mobile-->
 <div id="kt_header_mobile" class="header-mobile">
     <!--begin::Logo-->
     <a href="index.html">
-        <img alt="Logo" src="assets/media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
+        <img alt="Logo" src="media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
     </a>
     <!--end::Logo-->
     <!--begin::Toolbar-->
@@ -37,7 +29,7 @@
         </button>
         <button class="btn btn-icon btn-hover-transparent-white p-0 ml-3" id="kt_header_mobile_topbar_toggle">
 					<span class="svg-icon svg-icon-xl">
-						<!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
+						<!--begin::Svg Icon | path:media/svg/icons/General/User.svg-->
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 								<polygon points="0 0 24 0 24 24 0 24" />
@@ -85,7 +77,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -101,7 +93,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -128,7 +120,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -144,7 +136,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -171,7 +163,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -187,7 +179,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -214,7 +206,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -230,7 +222,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -257,7 +249,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -273,7 +265,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -289,7 +281,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -323,241 +315,79 @@
                 <div class="d-flex flex-column-fluid">
                     <!--begin::Container-->
                     <div class="container">
-                        <div class="card card-custom gutter-b mt-15">
-                            <div class="card-header">
+                        <div class="card card-custom">
+                            <div class="card-header flex-wrap border-0 pt-6 pb-0">
                                 <div class="card-title">
-                                    <h3 class="card-label">
-                                        Member Registration Page
-                                    </h3>
+                                    <h3 class="card-label">Search Commitee</h3>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form:form modelAttribute="databean" class="form"  enctype="multipart/form-data">
-                                    <div class="card-body">
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Full Name:</label>
-                                                <form:input path="fullName" class="form-control"/>
-                                                <form:errors path="fullName" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Birth Date:</label>
-                                                <form:input path="birthDate" type="date" class="form-control" placeholder="Enter Your BirthDate"/>
-                                                <form:errors path="birthDate" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Chief of Family:</label>
-                                                <form:select path="chiefOfFamily" class="form-control selectpicker">
-                                                    <form:option  value="Yes" label="Yes"></form:option>
-                                                    <form:option value="No" label="No"></form:option>
-                                                </form:select>
-                                                <form:errors path="chiefOfFamily" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Chief Name:</label>
-                                                <form:input path="chiefName" class="form-control" placeholder="Enter Your BirthDate"/>
-                                                <form:errors path="chiefName" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Age:</label>
-                                                <form:input path="age" class="form-control" placeholder="Enter Your Age"/>
-                                                <form:errors path="age" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Marquee Image / Logo:</label>
-                                                <div class="custom-file">
-                                                    <form:hidden path="image" />
-                                                    <input type="file" name="profilePic" class="custom-file-input" id="customFile"/>
-                                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                                </div>
-                                                <form:errors path="image" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Phone Number:</label>
-                                                <form:input path="phoneNo" class="form-control"/>
-                                                <form:errors path="phoneNo" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Mobile No:</label>
-                                                <form:input path="mobileNo" class="form-control" placeholder="Enter Your Age"/>
-                                                <form:errors path="mobileNo" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Blood Group:</label>
-                                                <form:select path="bloodGroup" class="form-control selectpicker">
-                                                    <form:options items="${bloodGroupList}"></form:options>
-                                                </form:select>
-                                                <form:errors path="bloodGroup" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Email Address:</label>
-                                                <form:input path="emailAddress" class="form-control" placeholder="Enter Your Age"/>
-                                                <form:errors path="emailAddress" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Marital Status:</label>
-                                                <form:select path="maritalStatus" class="form-control selectpicker">
-                                                    <form:options items="${maritalStatusList}"></form:options>
-                                                </form:select>
-                                                <form:errors path="maritalStatus" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Pin Code :</label>
-                                                <form:input path="pinCode" class="form-control" placeholder="Enter Your Age"/>
-                                                <form:errors path="pinCode" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Address :</label>
-                                                <form:textarea  path="address" class="form-control" name="memo" placeholder="Enter a menu" rows="3"></form:textarea>
-                                                <form:errors path="address" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Gender :</label>
-                                                <form:select path="gender" class="form-control selectpicker">
-                                                    <form:option  value="Male" label="Male"></form:option>
-                                                    <form:option value="Female" label="Female"></form:option>
-                                                    <form:option value="Not Given" label="Not Given"></form:option>
-                                                </form:select>
-                                                <form:errors path="pinCode" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-12">
-                                                <div class="card card-custom">
-                                                    <div class="card-header">
-                                                        <div class="card-title">
-                                                            <span class="card-icon">
-                                                                <i class="flaticon2-chat-1 text-primary"></i>
-                                                            </span>
-                                                            <h3 class="card-label">
-                                                                Qualification Information
-                                                            </h3>
-                                                        </div>
-                                                        <div class="card-toolbar">
-                                                            <button type="button" class="btn btn-primary mr-2 add-more-qualification">Add Qualification</button>
-                                                            <button type="button" class="btn btn-primary mr-2 delete-qualification">Remove Qualification</button>
-
-                                                        </div>
+                                <!--begin: Search Form-->
+                                <!--begin::Search Form-->
+                                <div class="mb-7">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-9 col-xl-8">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 my-2 my-md-0">
+                                                    <div class="input-icon">
+                                                        <input type="text" class="form-control" placeholder="Search..." id="kt_datatable_search_query" />
+                                                        <span>
+                                                            <i class="flaticon2-search-1 text-muted"></i>
+                                                        </span>
                                                     </div>
-                                                    <div class="card-body">
-                                                        <table class="table">
-                                                            <thead>
-                                                            <tr>
-                                                                <th><input class='check_all' type='checkbox' class="form-control" onclick="select_all()"/></th>
-                                                                <th>SR. No</th>
-                                                                <th>Name Of Course:</th>
-                                                                <th>School / University</th>
-                                                                <th>Passing Year</th>
-                                                                <th>Percentage:</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody class="qualification-body">
-                                                            <c:forEach items="${databean.qualificationInformations}" var="qi" varStatus="i">
-                                                                <tr>
-                                                                    <td><input type='checkbox' class='qualification_case' class="form-control" /></td>
-                                                                    <td><span class="row_no">${i.index+1}</span></td>
-                                                                    <td>
-                                                                        <form:input path="qualificationInformations[${i.index}].nameOfCourse" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].nameOfCourse" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="qualificationInformations[${i.index}].instituteName" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].instituteName" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="qualificationInformations[${i.index}].passingYear" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].passingYear" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="qualificationInformations[${i.index}].percentage" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].percentage" cssClass="text-danger"/>
-                                                                    </td>
-                                                                </tr>
-                                                            </c:forEach>
-                                                            </tbody>
-                                                        </table>
+                                                </div>
+                                                <div class="col-md-4 my-2 my-md-0">
+                                                    <div class="d-flex align-items-center">
+                                                        <label class="mr-3 mb-0 d-none d-md-block">Status:</label>
+                                                        <select class="form-control" id="kt_datatable_search_status">
+                                                            <option value="">All</option>
+                                                            <option value="active">Active</option>
+                                                            <option value="cancled">Canceled</option>
+                                                            <option value="live">Live</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12">
-                                                <div class="card card-custom">
-                                                    <div class="card-header">
-                                                        <div class="card-title">
-                                                            <span class="card-icon">
-                                                                <i class="flaticon2-chat-1 text-primary"></i>
-                                                            </span>
-                                                            <h3 class="card-label">
-                                                                Revenue Information
-                                                            </h3>
-                                                        </div>
-                                                        <div class="card-toolbar">
-                                                            <button type="button" class="btn btn-primary mr-2 add-more-revenue">Add Experience</button>
-                                                            <button type="button" class="btn btn-secondary delete_revenue">Remove Experience</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <table class="table">
-                                                            <thead>
-                                                            <tr>
-                                                                <th><input class='check_all' type='checkbox' class="form-control" onclick="select_all()"/></th>
-                                                                <th>SR. No</th>
-                                                                <th>Type OF Revenue</th>
-                                                                <th>Government / Private</th>
-                                                                <th>Experience in Years</th>
-                                                                <th>Working Place</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody class="revenue-body">
-                                                            <c:forEach items="${databean.revenueInformations}" var="qi" varStatus="i">
-                                                                <tr>
-                                                                    <td><input type='checkbox' class='revenue_case' class="form-control" /></td>
-                                                                    <td><span class="row_no">${i.index+1}</span></td>
-                                                                    <td>
-                                                                        <form:input path="revenueInformations[${i.index}].typeOFRevenue" class="form-control"/>
-                                                                        <form:errors path="revenueInformations[${i.index}].typeOFRevenue" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="revenueInformations[${i.index}].typeOfJob" class="form-control"/>
-                                                                        <form:errors path="revenueInformations[${i.index}].typeOfJob" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="revenueInformations[${i.index}].experience" class="form-control"/>
-                                                                        <form:errors path="revenueInformations[${i.index}].experience" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="revenueInformations[${i.index}].workingPlace" class="form-control"/>
-                                                                        <form:errors path="revenueInformations[${i.index}].workingPlace" cssClass="text-danger"/>
-                                                                    </td>
-                                                                </tr>
-                                                            </c:forEach>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-xl-4 mt-5 mt-lg-0">
+                                            <a href="#" class="btn btn-light-primary px-6 font-weight-bold">Search</a>
                                         </div>
                                     </div>
-                                    <div class="card-footer">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                                <button type="reset" class="btn btn-secondary">Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form:form>
+                                </div>
+                                <!--end::Search Form-->
+                                <!--end: Search Form-->
+                                <!--begin: Datatable-->
+                                <table id="kt_datatable" class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
+                                    <thead>
+                                    <tr>
+                                        <th title="Field #1">Sr No.</th>
+                                        <th title="Field #1">Commmitee Title</th>
+                                        <th title="Field #2">Commitee Image</th>
+                                        <th title="Field #3">Commitee Description</th>
+                                        <th title="Field #6">View</th>
+                                        <th title="Field #7">Edit</th>
+                                        <th title="Field #8">Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${dataList}" var="item" varStatus="i">
+                                        <tr>
+                                            <td>${i.index+1}</td>
+                                            <td>${item.commiteeTitle}</td>
+                                            <td>
+                                                <c:if test="${item.logo != ''}">
+                                                    <img src="/getimage?id=${item.logo}" height="50px" width="50px">
+                                                </c:if>
+                                            </td>
+                                            <td>${item.description}</td>
+                                            <td class="text-right"><a href="/view-commitee?id=${item.commiteeId}" class="btn btn-primary">View Commitee</a></td>
+                                            <td class="text-right"><a href="/edit-commitee?id=${item.commiteeId}" class="btn btn-primary">Edit Commitee</a></td>
+                                            <td>${item.status}</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                                <!--end: Datatable-->
                             </div>
                         </div>
                     </div>
@@ -593,100 +423,27 @@
     <!--end::Page-->
 </div>
 <!--end::Main-->
+
+<!--begin::Demo Panel-->
+<div id="kt_demo_panel" class="offcanvas offcanvas-right p-10">
+    <!--begin::Header-->
+    <div class="offcanvas-header d-flex align-items-center justify-content-between pb-7">
+        <h4 class="font-weight-bold m-0">Select A Demo</h4>
+        <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_demo_panel_close">
+            <i class="ki ki-close icon-xs text-muted"></i>
+        </a>
+    </div>
+    <!--end::Header-->
+</div>
+<!--end::Demo Panel-->
 </body>
+<script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
 <!--begin::Global Config(global config for global JS scripts)-->
-<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#6993FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#E1E9FF", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
 <!--end::Global Config-->
-<!--begin::Global Theme Bundle(used by all pages)-->
-<script src="<c:url value="/resources/plugins/global/plugins.bundle.js"></c:url>"></script>
-<script src="<c:url value="/resources/plugins/custom/prismjs/prismjs.bundle.js"></c:url>"></script>
-<script src="<c:url value="/resources/js/scripts.bundle.js"></c:url>"></script>
-<!--end::Global Theme Bundle-->
-<!--begin::Page Vendors(used by this page)-->
-<script src="<c:url value="/resources/plugins/custom/fullcalendar/fullcalendar.bundle.js"></c:url>"></script>
-<!--end::Page Vendors-->
-<!--begin::Page Scripts(used by this page)-->
-<script src="<c:url value="/resources/js/pages/widgets.js"></c:url>"></script>
-<!--end::Page Scripts-->
 
-<script type="text/javascript">
-    function select_all() {
-        $('input[class=case]:checkbox').each(function(){
-            if($('input[class=check_all]:checkbox:checked').length == 0){
-                $(this).prop("checked", false);
-            } else {
-                $(this).prop("checked", true);
-            }
-        });
-    }
-
-    $(document).ready(function() {
-        var index = $('.qualification-body').length;
-        var index_revenue = $('.revenue-body').length;
-
-        $(".add-more-qualification").click(function(){
-            index++;
-            var data="<tr><td><input type='checkbox' class='qualification_case' class='form-control' /></td><td><span class='row_no'>"+index+"</span></td><td><input name='qualificationInformations["+index+"].nameOfCourse' class='form-control'/></td><td><input name='qualificationInformations["+index+"].instituteName' class='form-control'/></td><td><input name='qualificationInformations["+index+"].passingYear' class='form-control'/></td><td><input name='qualificationInformations["+index+"].percentage' class='form-control'/></td></tr>";
-            $(".qualification-body").append(data);
-
-        });
-
-        $(".add-more-revenue").click(function(){
-            index_revenue++;
-            var data="<tr><td><input type='checkbox' class='revenue_case' class='form-control' /></td><td><span class='row_no'>"+index_revenue+"</span></td><td><input name='revenueInformations["+index_revenue+"].typeOFRevenue' class='form-control'/></td><td><input name='revenueInformations["+index_revenue+"].typeOfJob' class='form-control'/></td><td><input name='revenueInformations["+index_revenue+"].experience' class='form-control'/></td><td><input name='revenueInformations["+index_revenue+"].workingPlace' class='form-control'/></td></tr>";
-            $(".revenue-body").append(data);
-
-        });
-
-        $(".delete-qualification").on('click', function() {
-            $('.qualification_case:checkbox:checked').parents("tr").remove();
-            $('.row_no').each((k,ele)=>{
-                $(ele).html(k+1+'.')
-            });
-            var row=0;
-            $(".qualification-body tr").each(function() {
-                $(this).find("td:nth-child(3) input").attr('name','qualificationInformations['+row+'].nameOfCourse');
-                $(this).find("td:nth-child(4) input").attr('name','qualificationInformations['+row+'].instituteName');
-                $(this).find("td:nth-child(5) input").attr('name','qualificationInformations['+row+'].passingYear');
-                $(this).find("td:nth-child(6) input").attr('name','qualificationInformations['+row+'].percentage');
-                $(this).find("td:nth-child(3) input").attr('id','qualificationInformations['+row+'].nameOfCourse');
-                $(this).find("td:nth-child(4) input").attr('id','qualificationInformations['+row+'].instituteName');
-                $(this).find("td:nth-child(5) input").attr('id','qualificationInformations['+row+'].passingYear');
-                $(this).find("td:nth-child(6) input").attr('id','qualificationInformations['+row+'].percentage');
-                $(this).find("td:nth-child(3) input").attr('path','qualificationInformations['+row+'].nameOfCourse');
-                $(this).find("td:nth-child(4) input").attr('path','qualificationInformations['+row+'].instituteName');
-                $(this).find("td:nth-child(5) input").attr('path','qualificationInformations['+row+'].passingYear');
-                $(this).find("td:nth-child(6) input").attr('path','qualificationInformations['+row+'].percentage');
-                row++;
-            });
-        });
-
-        $(".delete_revenue").on('click', function() {
-            $('.revenue_case:checkbox:checked').parents("tr").remove();
-            $('.row_no').each((k,ele)=>{
-                $(ele).html(k+1+'.')
-            });
-            var row=0;
-            $(".revenue-body tr").each(function() {
-                $(this).find("td:nth-child(3) input").attr('name','revenueInformations['+row+'].typeOFRevenue');
-                $(this).find("td:nth-child(4) input").attr('name','revenueInformations['+row+'].typeOfJob');
-                $(this).find("td:nth-child(5) input").attr('name','revenueInformations['+row+'].experience');
-                $(this).find("td:nth-child(6) input").attr('name','revenueInformations['+row+'].workingPlace');
-                $(this).find("td:nth-child(3) input").attr('id','revenueInformations['+row+'].typeOFRevenue');
-                $(this).find("td:nth-child(4) input").attr('id','revenueInformations['+row+'].typeOfJob');
-                $(this).find("td:nth-child(5) input").attr('id','revenueInformations['+row+'].experience');
-                $(this).find("td:nth-child(6) input").attr('id','revenueInformations['+row+'].workingPlace');
-                $(this).find("td:nth-child(3) input").attr('path','revenueInformations['+row+'].typeOFRevenue');
-                $(this).find("td:nth-child(4) input").attr('path','revenueInformations['+row+'].typeOfJob');
-                $(this).find("td:nth-child(5) input").attr('path','revenueInformations['+row+'].experience');
-                $(this).find("td:nth-child(6) input").attr('path','revenueInformations['+row+'].workingPlace');
-                row++;
-            });
-        });
-
-    });
-
-
-</script>
-
+<script src="<c:url value="/cdn/plugins/global/plugins.bundle.js"></c:url>"></script>
+<script src="<c:url value="/cdn/plugins/custom/prismjs/prismjs.bundle.js"></c:url>"></script>
+<script src="<c:url value="/cdn/js/scripts.bundle.js"></c:url>"></script>
+<script src="<c:url value="/cdn/js/customs/searchmarquee.js"></c:url>"></script>
 </html>

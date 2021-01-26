@@ -5,19 +5,21 @@
   Time: 12:19 PM
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <title>Create commitee</title>
-    <link href="<c:url value="plugins/global/plugins.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="plugins/custom/prismjs/prismjs.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/style.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/cdn/plugins/global/plugins.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/cdn/plugins/custom/prismjs/prismjs.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/cdn/css/style.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
     <!--end::Global Theme Styles-->
     <!--begin::Layout Themes(used by all pages)-->
-    <link href="<c:url value="css/themes/layout/header/base/light.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/themes/layout/header/menu/light.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/themes/layout/brand/dark.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/themes/layout/aside/dark.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/cdn/css/themes/layout/header/base/light.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/cdn/css/themes/layout/header/menu/light.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/cdn/css/themes/layout/brand/dark.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/cdn/css/themes/layout/aside/dark.css"></c:url>" rel="stylesheet" type="text/css" />
 </head>
 <body id="kt_body" style="background-image: url(assets/media/bg/bg-10.jpg)" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
 <!--begin::Main-->
@@ -330,27 +332,31 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form class="form">
+                                <form:form  modelAttribute="databean"  enctype="multipart/form-data" class="form">
                                     <div class="card-body">
                                         <div class="form-group row">
                                             <div class="col-lg-12">
                                                 <label>Commitee Title</label>
-                                                <input type="email" class="form-control" placeholder="Enter full name"/>
+                                                <form:input  path="commiteeTitle"  class="form-control" placeholder="Enter full name"/>
+                                                <form:errors path="commiteeTitle" cssClass="text-danger"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-12">
                                                 <label>Commitee Image / Logo:</label>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="customFile"/>
+                                                    <form:hidden  path="logo"  class="form-control" placeholder="Enter full name"/>
+                                                    <input name="profilePic" type="file" class="custom-file-input" id="customFile"/>
                                                     <label class="custom-file-label" for="customFile">Choose file</label>
+                                                    <form:errors path="logo" cssClass="text-danger"/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-12">
                                                 <label>Commitee Description:</label>
-                                                <textarea class="form-control" name="memo" placeholder="Enter a menu" rows="3"></textarea>
+                                                <form:textarea class="form-control" path="description" placeholder="Enter a menu" rows="3"></form:textarea>
+                                                <form:errors path="description" cssClass="text-danger"/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -366,21 +372,37 @@
                                                             </h3>
                                                         </div>
                                                         <div class="card-toolbar">
-                                                            <button type="reset" class="btn btn-primary mr-2">Add Commitee Member</button>
-                                                            <button type="reset" class="btn btn-secondary">Remove Commitee Member</button>
+                                                            <button type="button" class="btn btn-primary mr-2 add-more-commitee">Add Commitee Member</button>
+                                                            <button type="button" class="btn btn-secondary delete-qualification">Remove Commitee Member</button>
                                                         </div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <div class="form-group row">
-                                                            <div class="col-lg-6">
-                                                                <label>Commitee Name:</label>
-                                                                <input type="email" class="form-control" placeholder="Enter full name"/>
-                                                            </div>
-                                                            <div class="col-lg-6">
-                                                                <label>Name Of Member:</label>
-                                                                <input type="email" class="form-control" placeholder="Enter full name"/>
-                                                            </div>
-                                                        </div>
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th><input class='check_all' type='checkbox' class="form-control" onclick="select_all()"/></th>
+                                                                <th>SR. No</th>
+                                                                <th>Committee Name</th>
+                                                                <th>Name Of Member</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody class="commitee-body">
+                                                            <c:forEach items="${databean.commiteeMembers}" var="qi" varStatus="i">
+                                                                <tr>
+                                                                    <td><input type='checkbox' class='commitee_case' class="form-control" /></td>
+                                                                    <td><span class="row_no">${i.index+1}</span></td>
+                                                                    <td>
+                                                                        <form:input path="commiteeMembers[${i.index}].nameOfCommitee" class="form-control"/>
+                                                                        <form:errors path="commiteeMembers[${i.index}].nameOfCommitee" cssClass="text-danger"/>
+                                                                    </td>
+                                                                    <td>
+                                                                        <form:input path="commiteeMembers[${i.index}].nameOfMember" class="form-control"/>
+                                                                        <form:errors path="commiteeMembers[${i.index}].nameOfMember" cssClass="text-danger"/>
+                                                                    </td>
+                                                                </tr>
+                                                            </c:forEach>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                 </div>
                                             </div>
@@ -389,12 +411,12 @@
                                     <div class="card-footer">
                                         <div class="row">
                                             <div class="col-lg-8">
-                                                <button type="reset" class="btn btn-primary mr-2">Register Commitee</button>
+                                                <button type="submit" class="btn btn-primary mr-2">Register Commitee</button>
                                                 <button type="reset" class="btn btn-secondary">Reset Form</button>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                </form:form>
                             </div>
                         </div>
                     </div>
@@ -442,38 +464,62 @@
     </div>
     <!--end::Header-->
 </div>
-<!--end::Demo Panel-->
-<script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
-<!--begin::Global Config(global config for global JS scripts)-->
-<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#6993FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#E1E9FF", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
-<!--end::Global Config-->
-<!--begin::Global Theme Bundle(used by all pages)-->
-<script src="assets/plugins/global/plugins.bundle.js"></script>
-<script src="assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
-<script src="assets/js/scripts.bundle.js"></script>
-<!--end::Global Theme Bundle-->
-<!--begin::Page Vendors(used by this page)-->
-<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-<script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM"></script>
-<script src="assets/plugins/custom/gmaps/gmaps.js"></script>
-<!--end::Page Vendors-->
-<!--begin::Page Scripts(used by this page)-->
-<script src="assets/js/pages/widgets.js"></script>
-<!--end::Page Scripts-->
 </body>
 <!--begin::Global Config(global config for global JS scripts)-->
 <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
 <!--end::Global Config-->
 <!--begin::Global Theme Bundle(used by all pages)-->
-<script src="<c:url value="plugins/global/plugins.bundle.js"></c:url>"></script>
-<script src="<c:url value="plugins/custom/prismjs/prismjs.bundle.js"></c:url>"></script>
-<script src="<c:url value="js/scripts.bundle.js"></c:url>"></script>
+<script src="<c:url value="/cdn/plugins/global/plugins.bundle.js"></c:url>"></script>
+<script src="<c:url value="/cdn/plugins/custom/prismjs/prismjs.bundle.js"></c:url>"></script>
+<script src="<c:url value="/cdn/js/scripts.bundle.js"></c:url>"></script>
 <!--end::Global Theme Bundle-->
 <!--begin::Page Vendors(used by this page)-->
-<script src="<c:url value="plugins/custom/fullcalendar/fullcalendar.bundle.js"></c:url>"></script>
+<script src="<c:url value="/cdn/plugins/custom/fullcalendar/fullcalendar.bundle.js"></c:url>"></script>
 <!--end::Page Vendors-->
 <!--begin::Page Scripts(used by this page)-->
-<script src="<c:url value="js/pages/widgets.js"></c:url>"></script>
+<script src="<c:url value="/cdn/js/pages/widgets.js"></c:url>"></script>
 <!--end::Page Scripts-->
+
+<script type="text/javascript">
+    function select_all() {
+        $('input[class=commitee_case]:checkbox').each(function(){
+            if($('input[class=check_all]:checkbox:checked').length == 0){
+                $(this).prop("checked", false);
+            } else {
+                $(this).prop("checked", true);
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        var index = $('.commitee-body').length;
+
+        $(".add-more-commitee").click(function(){
+            index++;
+            var data="<tr><td><input type='checkbox' class='commitee_case' class='form-control' /></td><td><span class='row_no'>"+index+"</span></td><td><input name='commiteeMembers["+index+"].nameOfCommitee' class='form-control'/></td><td><input name='commiteeMembers["+index+"].nameOfMember' class='form-control'/></td></tr>";
+                $(".commitee-body").append(data);
+
+        });
+
+        $(".delete-qualification").on('click', function() {
+            $('.commitee_case:checkbox:checked').parents("tr").remove();
+            $('.row_no').each((k,ele)=>{
+                $(ele).html(k+1+'.')
+            });
+            var row=0;
+            $(".commitee-body tr").each(function() {
+                $(this).find("td:nth-child(3) input").attr('name','commiteeMembers['+row+'].nameOfCommitee');
+                $(this).find("td:nth-child(4) input").attr('name','commiteeMembers['+row+'].nameOfMember');
+                $(this).find("td:nth-child(3) input").attr('id','commiteeMembers['+row+'].nameOfCommitee');
+                $(this).find("td:nth-child(4) input").attr('id','commiteeMembers['+row+'].nameOfMember');
+                $(this).find("td:nth-child(3) input").attr('path','commiteeMembers['+row+'].nameOfCommitee');
+                $(this).find("td:nth-child(4) input").attr('path','commiteeMembers['+row+'].nameOfMember');
+                row++;
+            });
+        });
+    });
+
+
+</script>
 
 </html>
