@@ -55,9 +55,9 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         }
 
         if (hasSAdminRole) {
-            redirectStrategy.sendRedirect(arg0, arg1, "/admin/dashboard");
+            redirectStrategy.sendRedirect(arg0, arg1, "/super-admin/dashboard");
         } else if (hasAdminRole) {
-            redirectStrategy.sendRedirect(arg0, arg1, "/president/dashboard");
+            redirectStrategy.sendRedirect(arg0, arg1, "/admin/dashboard");
         } else if (hasCommitteeMemberRole) {
             redirectStrategy.sendRedirect(arg0, arg1, "/committee-member/dashboard");
         }  else if (hasAuditorRole) {

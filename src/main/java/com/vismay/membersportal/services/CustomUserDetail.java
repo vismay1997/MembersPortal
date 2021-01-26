@@ -1,27 +1,27 @@
 package com.vismay.membersportal.services;
 
-import com.vismay.membersportal.databeans.User;
+import com.vismay.membersportal.databeans.UserRegistrationDataBean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.List;
 
 public class CustomUserDetail implements UserDetails {
 
-    private User user;
+    private UserRegistrationDataBean user;
 
-    public CustomUserDetail(User user) {
+    public CustomUserDetail(UserRegistrationDataBean user) {
         this.user = user;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        Set<GrantedAuthority> grantedAuthorities = user.getRoles().stream()
-                .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getRole().toString().toUpperCase()))
-                .collect(Collectors.toSet());
+        SimpleGrantedAuthority simpleGrantedAuthority=new SimpleGrantedAuthority("ROLE_"+user.getUserRole());
+        List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        grantedAuthorities.add(simpleGrantedAuthority);
         return grantedAuthorities;
     }
 

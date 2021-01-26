@@ -1,7 +1,6 @@
 package com.vismay.membersportal.services;
 
-import com.vismay.membersportal.databeans.Role;
-import com.vismay.membersportal.databeans.User;
+import com.vismay.membersportal.databeans.UserRegistrationDataBean;
 import com.vismay.membersportal.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -22,19 +21,17 @@ public class CustomUserDetailsService  implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) {
 
-        User user = userRepository.findByUsername(username);
+        UserRegistrationDataBean user = userRepository.findByUsername(username);
         if (user == null) {
             return null;
         }
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), getAuthorities(user));
     }
 
-    private Set<GrantedAuthority> getAuthorities(User user){
+    private Set<GrantedAuthority> getAuthorities(UserRegistrationDataBean user){
         Set<GrantedAuthority> authorities = new HashSet<>();
-        for(Role role : user.getRoles()) {
-            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_"+role.getRole().toUpperCase());
-            authorities.add(grantedAuthority);
-        }
+        GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_"+user.getUserRole().toUpperCase());
+        authorities.add(grantedAuthority);
         return authorities;
     }
 

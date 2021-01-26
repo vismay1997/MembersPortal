@@ -8,7 +8,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -346,7 +345,44 @@
         <div class="testimonials">
             <div class="swiper-container test-slider">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide text-center">
+                    <c:forEach items="${marqueelist}" var="marqueeItem">
+                            <div class="swiper-slide text-center">
+                                <div class="row">
+                                    <div class="offset-lg-1 col-lg-10">
+                                        <div class="test-img" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0"><img
+                                                src="<c:url value="/getimage?id=${marqueeItem.image}"></c:url>" alt="Testimonial 1"></div>
+                                        <h5 data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"
+                                            data-aos-offset="0">${marqueeItem.title}</h5>
+                                        <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="600"
+                                           data-aos-offset="0">${marqueeItem.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </c:forEach>
+                    <c:if test="${empty marqueelist}">
+                        <div class="swiper-slide text-center">
+                            <div class="row">
+                                <div class="offset-lg-1 col-lg-10">
+                                    <div class="test-img" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0"><img
+                                            src="images/test1.png" alt="Testimonial 1"></div>
+                                    <h5 data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"
+                                        data-aos-offset="0">John</h5>
+                                    <span data-aos="fade-up" data-aos-delay="400" data-aos-duration="600"
+                                          data-aos-offset="0">UI/UX
+                                            Designer</span>
+                                    <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="600"
+                                       data-aos-offset="0">Ash's tactics &
+                                        books have helped me a lot in my understanding on how social
+                                        media
+                                        advertising works.I can say that he is one of the best development professionals
+                                        i have
+                                        dealt with so far. His experience is great & he is such a great & pleasant
+                                        person to
+                                        work with as he understands what you are</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide text-center">
                         <div class="row">
                             <div class="offset-lg-1 col-lg-10">
                                 <div class="test-img" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0"><img
@@ -368,50 +404,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide text-center">
-                        <div class="row">
-                            <div class="offset-lg-1 col-lg-10">
-                                <div class="test-img" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0"><img
-                                        src="images/test1.png" alt="Testimonial 1"></div>
-                                <h5 data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"
-                                    data-aos-offset="0">John</h5>
-                                <span data-aos="fade-up" data-aos-delay="400" data-aos-duration="600"
-                                      data-aos-offset="0">UI/UX
-                                        Designer</span>
-                                <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="600"
-                                   data-aos-offset="0">Ash's tactics &
-                                    books have helped me a lot in my understanding on how social
-                                    media
-                                    advertising works.I can say that he is one of the best development professionals
-                                    i have
-                                    dealt with so far. His experience is great & he is such a great & pleasant
-                                    person to
-                                    work with as he understands what you are</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide text-center">
-                        <div class="row">
-                            <div class="offset-lg-1 col-lg-10">
-                                <div class="test-img" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0"><img
-                                        src="<c:url value="/cdn/home/images/test1.png"></c:url>" alt="Testimonial 1"></div>
-                                <h5 data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"
-                                    data-aos-offset="0">John</h5>
-                                <span data-aos="fade-up" data-aos-delay="400" data-aos-duration="600"
-                                      data-aos-offset="0">UI/UX
-                                        Designer</span>
-                                <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="600"
-                                   data-aos-offset="0">Ash's tactics &
-                                    books have helped me a lot in my understanding on how social
-                                    media
-                                    advertising works.I can say that he is one of the best development professionals
-                                    i have
-                                    dealt with so far. His experience is great & he is such a great & pleasant
-                                    person to
-                                    work with as he understands what you are</p>
-                            </div>
-                        </div>
-                    </div>
+                    </c:if>
                 </div>
                 <div class="test-pagination"></div>
             </div>
@@ -462,12 +455,9 @@
     <div class="footer-widgets">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-xl-3">
+                <div class="col-md-8 col-xl-6">
                     <div class="single-widget contact-widget" data-aos="fade-up" data-aos-delay="0">
-                        <h6 class="widget-tiltle">&nbsp;</h6>
-                        <p>By subscribing to our mailing list you will always be update with the latest news from
-                            us.
-                        </p>
+                        <h6 class="widget-tiltle">Cantact US</h6>
                         <div class="media">
                             <i class="fa fa-map-marker"></i>
                             <div class="media-body ml-3">
@@ -499,107 +489,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-3">
-                    <div class="single-widget twitter-widget" data-aos="fade-up" data-aos-delay="200">
-                        <h6 class="widget-tiltle">Fresh Tweets</h6>
-                        <div class="media">
-                            <i class="fa fa-twitter"></i>
-                            <div class="media-body ml-3">
-                                <h6><a href="#">@Themes,</a> Html Version Out Now</h6>
-                                <span>10 Mins Ago</span>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <i class="fa fa-twitter"></i>
-                            <div class="media-body ml-3">
-                                <h6><a href="#">@Envato,</a> the best selling item of the day!</h6>
-                                <span>20 Mins Ago</span>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <i class="fa fa-twitter"></i>
-                            <div class="media-body ml-3">
-                                <h6><a href="#">@Collis,</a> We Planned to Update the Enavto Author Payment Method
-                                    Soon!</h6>
-                                <span>10 Mins Ago</span>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <i class="fa fa-twitter"></i>
-                            <div class="media-body ml-3">
-                                <h6><a href="#">@SteelThemes,</a> Html Version Out Now</h6>
-                                <span>15 Mins Ago</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3">
+                <div class="col-md-8 col-xl-6">
                     <div class="single-widget recent-post-widget" data-aos="fade-up" data-aos-delay="400">
                         <h6 class="widget-tiltle">Latest Updates</h6>
-                        <div class="media">
-                            <a class="rcnt-img" href="#"><img src="<c:url value="/cdn/home/images/rcnt-post1.png"></c:url>"
-                                                              alt="Recent Post"></a>
-                            <div class="media-body ml-3">
-                                <h6><a href="#">An engaging</a></h6>
-                                <p><i class="fa fa-user"></i>Mano <i class="fa fa-eye"></i> 202 Views</p>
+                        <c:forEach items="${noticeList}" var="noticeItem">
+                            <div class="media">
+                                <a class="rcnt-img" href="#"><img src="<c:url value="/getimage?id=${noticeItem.noticeLogo}"></c:url>"
+                                                                  alt="${noticeItem.noticeTitle}"></a>
+                                <div class="media-body ml-3">
+                                    <h6><a href="#">${noticeItem.noticeTitle}</a></h6>
+                                    <p><i class="fa fa-eye"></i> ${noticeItem.noticeDescription}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="media">
-                            <a class="rcnt-img" href="#"><img src="<c:url value="/cdn/home/images/rcnt-post2.png"></c:url>"
-                                                              alt="Recent Post"></a>
-                            <div class="media-body ml-3">
-                                <h6><a href="#">Statistics and analysis. The key to succes.</a></h6>
-                                <p><i class="fa fa-user"></i>Rosias <i class="fa fa-eye"></i> 20 Views</p>
+                        </c:forEach>
+                        <c:if test="${empty noticeList}">
+                            <div class="media">
+                                <a class="rcnt-img" href="#"><img src="<c:url value="/cdn/home/images/rcnt-post2.png"></c:url>"
+                                                                  alt="Recent Post"></a>
+                                <div class="media-body ml-3">
+                                    <h6><a href="#">Statistics and analysis. The key to succes.</a></h6>
+                                    <p><i class="fa fa-user"></i>Rosias <i class="fa fa-eye"></i> 20 Views</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="media">
-                            <a class="rcnt-img" href="#"><img src="<c:url value="/cdn/home/images/rcnt-post3.png"></c:url>"
-                                                              alt="Recent Post"></a>
-                            <div class="media-body ml-3">
-                                <h6><a href="#">Envato Meeting turns into a photoshooting.</a></h6>
-                                <p><i class="fa fa-user"></i>Kien <i class="fa fa-eye"></i> 74 Views</p>
+                            <div class="media">
+                                <a class="rcnt-img" href="#"><img src="<c:url value="/cdn/home/images/rcnt-post3.png"></c:url>"
+                                                                  alt="Recent Post"></a>
+                                <div class="media-body ml-3">
+                                    <h6><a href="#">Envato Meeting turns into a photoshooting.</a></h6>
+                                    <p><i class="fa fa-user"></i>Kien <i class="fa fa-eye"></i> 74 Views</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="media">
-                            <a class="rcnt-img" href="#"><img src="<c:url value="/cdn/home/images/rcnt-post4.png"></c:url>"
-                                                              alt="Recent Post"></a>
-                            <div class="media-body ml-3">
-                                <h6><a href="#">An engaging embedded the video posts</a></h6>
-                                <p><i class="fa fa-user"></i>Robert <i class="fa fa-eye"></i> 48 Views</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3">
-                    <div class="single-widget tags-widget" data-aos="fade-up" data-aos-delay="800">
-                        <h6 class="widget-tiltle">Popular Tags</h6>
-                        <a href="#">Amazing</a>
-                        <a href="#">Design</a>
-                        <a href="#">Photoshop</a>
-                        <a href="#">Art</a>
-                        <a href="#">Wordpress</a>
-                        <a href="#">jQuery</a>
-                    </div>
-                    <div class="single-widget subscribe-widget" data-aos="fade-up" data-aos-delay="800">
-                        <h6 class="widget-tiltle">Subscribe us</h6>
-                        <p>Sign up for our mailing list to get latest updates and offers</p>
-                        <form class="" method="get">
-                            <div class="input-group">
-                                <input class="field form-control" name="subscribe" type="email"
-                                       placeholder="Email Address">
-                                <span class="input-group-btn">
-                                        <button type="submit" name="submit-mail"><i class="fa fa-check"></i></button>
-                                    </span>
-                            </div>
-                        </form>
-                        <p>We respect your privacy</p>
-                        <ul class="nav social-nav">
-                            <li><a href="https://www.facebook.com/fh5co" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+                        </c:if>
+
                     </div>
                 </div>
             </div>
