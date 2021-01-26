@@ -7,10 +7,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
-    <title>Create Notice</title>
+    <title>View Links</title>
     <link href="<c:url value="/cdn/plugins/global/plugins.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
     <link href="<c:url value="/cdn/plugins/custom/prismjs/prismjs.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
     <link href="<c:url value="/cdn/css/style.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
@@ -21,13 +20,13 @@
     <link href="<c:url value="/cdn/css/themes/layout/brand/dark.css"></c:url>" rel="stylesheet" type="text/css" />
     <link href="<c:url value="/cdn/css/themes/layout/aside/dark.css"></c:url>" rel="stylesheet" type="text/css" />
 </head>
-<body id="kt_body" style="background-image: url(assets/media/bg/bg-10.jpg)" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
+<body id="kt_body" style="background-image: url(media/bg/bg-10.jpg)" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
 <!--begin::Main-->
 <!--begin::Header Mobile-->
 <div id="kt_header_mobile" class="header-mobile">
     <!--begin::Logo-->
     <a href="index.html">
-        <img alt="Logo" src="assets/media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
+        <img alt="Logo" src="media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
     </a>
     <!--end::Logo-->
     <!--begin::Toolbar-->
@@ -37,7 +36,7 @@
         </button>
         <button class="btn btn-icon btn-hover-transparent-white p-0 ml-3" id="kt_header_mobile_topbar_toggle">
 					<span class="svg-icon svg-icon-xl">
-						<!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
+						<!--begin::Svg Icon | path:media/svg/icons/General/User.svg-->
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 								<polygon points="0 0 24 0 24 24 0 24" />
@@ -85,7 +84,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -101,7 +100,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -128,7 +127,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -144,7 +143,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -171,7 +170,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -187,7 +186,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -214,7 +213,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -230,7 +229,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -248,16 +247,16 @@
                                     </li>
                                     <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
                                         <a href="javascript:;" class="menu-link menu-toggle">
-                                            <span class="menu-text">Job Management Portal</span>
+                                            <span class="menu-text">Marquee Management Portal</span>
                                             <span class="menu-desc"></span>
                                             <i class="menu-arrow"></i>
                                         </a>
                                         <div class="menu-submenu menu-submenu-classic menu-submenu-left">
                                             <ul class="menu-subnav">
                                                 <li class="menu-item" aria-haspopup="true">
-                                                    <a href="javascript:;" class="menu-link">
+                                                    <a href="<c:url value="/create-marquee"></c:url>" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -267,13 +266,13 @@
 																</svg>
                                                                 <!--end::Svg Icon-->
 															</span>
-                                                        <span class="menu-text">Create New Job Application</span>
+                                                        <span class="menu-text">Create New Marquee</span>
                                                     </a>
                                                 </li>
                                                 <li class="menu-item" aria-haspopup="true">
-                                                    <a href="javascript:;" class="menu-link">
+                                                    <a href="<c:url value="/search-marquee"></c:url> " class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -283,23 +282,7 @@
 																</svg>
                                                                 <!--end::Svg Icon-->
 															</span>
-                                                        <span class="menu-text">Search And Modify Job Application</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menu-item" aria-haspopup="true">
-                                                    <a href="javascript:;" class="menu-link">
-															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
-																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																		<rect x="0" y="0" width="24" height="24" />
-																		<path d="M8,17 C8.55228475,17 9,17.4477153 9,18 L9,21 C9,21.5522847 8.55228475,22 8,22 L3,22 C2.44771525,22 2,21.5522847 2,21 L2,18 C2,17.4477153 2.44771525,17 3,17 L3,16.5 C3,15.1192881 4.11928813,14 5.5,14 C6.88071187,14 8,15.1192881 8,16.5 L8,17 Z M5.5,15 C4.67157288,15 4,15.6715729 4,16.5 L4,17 L7,17 L7,16.5 C7,15.6715729 6.32842712,15 5.5,15 Z" fill="#000000" opacity="0.3" />
-																		<path d="M2,11.8650466 L2,6 C2,4.34314575 3.34314575,3 5,3 L19,3 C20.6568542,3 22,4.34314575 22,6 L22,15 C22,15.0032706 21.9999948,15.0065399 21.9999843,15.009808 L22.0249378,15 L22.0249378,19.5857864 C22.0249378,20.1380712 21.5772226,20.5857864 21.0249378,20.5857864 C20.7597213,20.5857864 20.5053674,20.4804296 20.317831,20.2928932 L18.0249378,18 L12.9835977,18 C12.7263047,14.0909841 9.47412135,11 5.5,11 C4.23590829,11 3.04485894,11.3127315 2,11.8650466 Z M6,7 C5.44771525,7 5,7.44771525 5,8 C5,8.55228475 5.44771525,9 6,9 L15,9 C15.5522847,9 16,8.55228475 16,8 C16,7.44771525 15.5522847,7 15,7 L6,7 Z" fill="#000000" />
-																	</g>
-																</svg>
-                                                                <!--end::Svg Icon-->
-															</span>
-                                                        <span class="menu-text">Search And Apply Job Application</span>
+                                                        <span class="menu-text">Search And Modify Marquee</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -327,60 +310,52 @@
                             <div class="card-header">
                                 <div class="card-title">
                                     <h3 class="card-label">
-                                        Create Links Section
+                                        View Links Information
                                     </h3>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form:form modelAttribute="databean" enctype="multipart/form-data" class="form">
-                                    <div class="card-body">
-                                        <div class="form-group row">
-                                            <div class="col-lg-12">
-                                                <label>Link Title</label>
-                                                <form:input  path="linkTitle" class="form-control" placeholder="Enter full name"/>
-                                                <form:errors path="linkTitle" cssClass="text-danger"/>
-                                            </div>
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label>Link Title</label>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-12">
-                                                <label>Links Logo:</label>
-                                                <div class="custom-file">
-                                                    <input type="file" name="images" class="custom-file-input" id="customFile"/>
-                                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                                    <form:hidden path="image"></form:hidden>
-                                                    <form:errors path="image" cssClass="text-danger"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-12">
-                                                <label>Page Description:</label>
-                                                <form:textarea class="form-control" path="pageDescription" placeholder="Enter a menu" rows="3"></form:textarea>
-                                                <form:errors path="pageDescription" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-12">
-                                                <label>Page Images:</label>
-                                                <div class="custom-file">
-                                                    <input type="file" name="pageimages" class="custom-file-input" id="customFile"/>
-                                                    <form:hidden path="pageImage"></form:hidden>
-                                                    <form:errors path="pageImage" cssClass="text-danger"/>
-                                                    <label class="custom-file-label" for="customFile">Choose files</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                                <button type="submit" class="btn btn-secondary">Cancel</button>
-                                            </div>
+                                        <div class="col-lg-6">
+                                            <div>${databean.linkTitle}</div>
                                         </div>
                                     </div>
-                                </form:form>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label>Link Image / Logo:</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div><img src="/getimage?id=${databean.image}" height="50px" width="50px"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label>link Description</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div>${databean.pageDescription}</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label>link Page Images:</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div><img src="/getimage?id=${databean.image}" height="50px" width="50px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <a href="<c:url value="/search-links"></c:url>" class="btn btn-primary mr-2">Go Back</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -434,32 +409,27 @@
 <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#6993FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#E1E9FF", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
 <!--end::Global Config-->
 <!--begin::Global Theme Bundle(used by all pages)-->
-<script src="assets/plugins/global/plugins.bundle.js"></script>
-<script src="assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
-<script src="assets/js/scripts.bundle.js"></script>
+<script src="plugins/global/plugins.bundle.js"></script>
+<script src="plugins/custom/prismjs/prismjs.bundle.js"></script>
+<script src="js/scripts.bundle.js"></script>
 <!--end::Global Theme Bundle-->
 <!--begin::Page Vendors(used by this page)-->
-<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+<script src="plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM"></script>
-<script src="assets/plugins/custom/gmaps/gmaps.js"></script>
+<script src="plugins/custom/gmaps/gmaps.js"></script>
 <!--end::Page Vendors-->
 <!--begin::Page Scripts(used by this page)-->
-<script src="assets/js/pages/widgets.js"></script>
+<script src="js/pages/widgets.js"></script>
 <!--end::Page Scripts-->
 </body>
-<!--begin::Global Config(global config for global JS scripts)-->
-<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
-<!--end::Global Config-->
 <!--begin::Global Theme Bundle(used by all pages)-->
 <script src="<c:url value="/cdn/plugins/global/plugins.bundle.js"></c:url>"></script>
 <script src="<c:url value="/cdn/plugins/custom/prismjs/prismjs.bundle.js"></c:url>"></script>
 <script src="<c:url value="/cdn/js/scripts.bundle.js"></c:url>"></script>
 <!--end::Global Theme Bundle-->
 <!--begin::Page Vendors(used by this page)-->
+<script src="<c:url value="/cdn/js/pages/crud/forms/widgets/bootstrap-daterangepicker.js"></c:url>"></script>
 <script src="<c:url value="/cdn/plugins/custom/fullcalendar/fullcalendar.bundle.js"></c:url>"></script>
 <!--end::Page Vendors-->
-<!--begin::Page Scripts(used by this page)-->
-<script src="<c:url value="/cdn/js/pages/widgets.js"></c:url>"></script>
-<!--end::Page Scripts-->
 
 </html>
