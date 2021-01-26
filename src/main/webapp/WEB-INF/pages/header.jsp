@@ -136,7 +136,7 @@
                                     </svg>
                                     <!--end::Svg Icon-->
                                 </span>
-                                <span class="menu-text">Search And Modify Marquee</span>
+                                <span class="menu-text">Search And Modify User</span>
                             </a>
                         </li>
                     </ul>
