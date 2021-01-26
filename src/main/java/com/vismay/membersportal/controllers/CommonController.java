@@ -19,10 +19,10 @@ public class CommonController {
     @Autowired
     private DBFileStorageService dbFileStorageService;
 
-    @GetMapping(path = "/getimage",produces = MediaType.IMAGE_JPEG_VALUE)
-    public void getImageFromID(@RequestParam("id") String imageID, HttpServletResponse httpServletResponse) throws MyFileNotFoundException, IOException {
-        httpServletResponse.setContentType(MediaType.IMAGE_JPEG_VALUE);
-        FilesUploadDataBean filesUploadDataBean=dbFileStorageService.getFile(imageID);
-        StreamUtils.copy(filesUploadDataBean.getData(), httpServletResponse.getOutputStream());
+        @GetMapping(path = "/getimage",produces = MediaType.IMAGE_JPEG_VALUE)
+        public void getImageFromID(@RequestParam("id") String imageID, HttpServletResponse httpServletResponse) throws MyFileNotFoundException, IOException {
+            httpServletResponse.setContentType(MediaType.IMAGE_JPEG_VALUE);
+            FilesUploadDataBean filesUploadDataBean=dbFileStorageService.getFile(imageID);
+            StreamUtils.copy(filesUploadDataBean.getData(), httpServletResponse.getOutputStream());
+        }
     }
-}

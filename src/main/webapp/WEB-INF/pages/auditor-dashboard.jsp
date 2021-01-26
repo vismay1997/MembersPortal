@@ -1,33 +1,25 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: vismay
-  Date: 1/23/2021
-  Time: 12:19 PM
+  User: Vismay Patel
+  Date: 1/24/2021
+  Time: 3:43 PM
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
-    <title>Home Page Section</title>
-    <link href="<c:url value="plugins/global/plugins.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="plugins/custom/prismjs/prismjs.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/style.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
-    <!--end::Global Theme Styles-->
-    <!--begin::Layout Themes(used by all pages)-->
-    <link href="<c:url value="css/themes/layout/header/base/light.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/themes/layout/header/menu/light.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/themes/layout/brand/dark.css"></c:url>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value="css/themes/layout/aside/dark.css"></c:url>" rel="stylesheet" type="text/css" />
+    <title>Search And Manage Marquee</title>
+    <link href="<c:url value="/resources/plugins/global/plugins.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/resources/plugins/custom/prismjs/prismjs.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
+    <link href="<c:url value="/resources/css/style.bundle.css"></c:url>" rel="stylesheet" type="text/css" />
 </head>
-<body id="kt_body" style="background-image: url(assets/media/bg/bg-10.jpg)" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
+<body id="kt_body" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
 <!--begin::Main-->
 <!--begin::Header Mobile-->
 <div id="kt_header_mobile" class="header-mobile">
     <!--begin::Logo-->
     <a href="index.html">
-        <img alt="Logo" src="assets/media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
+        <img alt="Logo" src="/resources/media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
     </a>
     <!--end::Logo-->
     <!--begin::Toolbar-->
@@ -37,7 +29,7 @@
         </button>
         <button class="btn btn-icon btn-hover-transparent-white p-0 ml-3" id="kt_header_mobile_topbar_toggle">
 					<span class="svg-icon svg-icon-xl">
-						<!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
+						<!--begin::Svg Icon | path:media/svg/icons/General/User.svg-->
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 								<polygon points="0 0 24 0 24 24 0 24" />
@@ -85,7 +77,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -101,7 +93,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -128,7 +120,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -144,7 +136,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -171,7 +163,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -187,7 +179,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -214,7 +206,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -230,7 +222,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -257,7 +249,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -273,7 +265,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -289,7 +281,7 @@
                                                 <li class="menu-item" aria-haspopup="true">
                                                     <a href="javascript:;" class="menu-link">
 															<span class="svg-icon menu-icon">
-																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
+																<!--begin::Svg Icon | path:media/svg/icons/Communication/Safe-chat.svg-->
 																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																		<rect x="0" y="0" width="24" height="24" />
@@ -323,242 +315,281 @@
                 <div class="d-flex flex-column-fluid">
                     <!--begin::Container-->
                     <div class="container">
-                        <div class="card card-custom gutter-b mt-15">
-                            <div class="card-header">
+                        <div class="card card-custom">
+                            <div class="card-header flex-wrap border-0 pt-6 pb-0">
                                 <div class="card-title">
-                                    <h3 class="card-label">
-                                        Member Registration Page
-                                    </h3>
+                                    <h3 class="card-label">Auditor Dashboard</h3>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form:form modelAttribute="databean" class="form"  enctype="multipart/form-data">
-                                    <div class="card-body">
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Full Name:</label>
-                                                <form:input path="fullName" class="form-control"/>
-                                                <form:errors path="fullName" cssClass="text-danger"/>
+                                <!--begin::Row-->
+                                <div class="row">
+                                    <div class="col-xl-4">
+                                        <!--begin::Mixed Widget 1-->
+                                        <div class="card card-custom bg-gray-100 gutter-b card-stretch">
+                                            <!--begin::Header-->
+                                            <div class="card-header border-0 bg-danger py-5">
+                                                <h3 class="card-title font-weight-bolder text-white">Members</h3>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <label>Birth Date:</label>
-                                                <form:input path="birthDate" type="date" class="form-control" placeholder="Enter Your BirthDate"/>
-                                                <form:errors path="birthDate" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Chief of Family:</label>
-                                                <form:select path="chiefOfFamily" class="form-control selectpicker">
-                                                    <form:option  value="Yes" label="Yes"></form:option>
-                                                    <form:option value="No" label="No"></form:option>
-                                                </form:select>
-                                                <form:errors path="chiefOfFamily" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Chief Name:</label>
-                                                <form:input path="chiefName" class="form-control" placeholder="Enter Your BirthDate"/>
-                                                <form:errors path="chiefName" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Age:</label>
-                                                <form:input path="age" class="form-control" placeholder="Enter Your Age"/>
-                                                <form:errors path="age" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Marquee Image / Logo:</label>
-                                                <div class="custom-file">
-                                                    <form:hidden path="image" />
-                                                    <input type="file" name="profilePic" class="custom-file-input" id="customFile"/>
-                                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                            <!--end::Header-->
+                                            <!--begin::Body-->
+                                            <div class="card-body p-0 position-relative overflow-hidden">
+                                                <!--begin::Chart-->
+                                                <div id="kt_mixed_widget_1_chart" class="card-rounded-bottom bg-danger" style="height: 200px"></div>
+                                                <!--end::Chart-->
+                                                <!--begin::Stats-->
+                                                <div class="card-spacer mt-n25">
+                                                    <!--begin::Row-->
+                                                    <div class="row m-0">
+                                                        <div class="col bg-light-warning px-6 py-8 rounded-xl mr-7 mb-7">
+															<span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Media/Equalizer.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<rect x="0" y="0" width="24" height="24" />
+																		<rect fill="#000000" opacity="0.3" x="13" y="4" width="3" height="16" rx="1.5" />
+																		<rect fill="#000000" x="8" y="9" width="3" height="11" rx="1.5" />
+																		<rect fill="#000000" x="18" y="11" width="3" height="9" rx="1.5" />
+																		<rect fill="#000000" x="3" y="13" width="3" height="7" rx="1.5" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-warning font-weight-bold font-size-h6">Monthly Registered Members</a>
+                                                        </div>
+                                                        <div class="col bg-light-primary px-6 py-8 rounded-xl mb-7">
+															<span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Add-user.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<polygon points="0 0 24 0 24 24 0 24" />
+																		<path d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+																		<path d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">Register New Member</a>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Row-->
+                                                    <!--begin::Row-->
+                                                    <div class="row m-0">
+                                                        <div class="col bg-light-danger px-6 py-8 rounded-xl mr-7">
+															<span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<polygon points="0 0 24 0 24 24 0 24" />
+																		<path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z" fill="#000000" fill-rule="nonzero" />
+																		<path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" fill="#000000" opacity="0.3" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-danger font-weight-bold font-size-h6 mt-2">Edit Registered Member</a>
+                                                        </div>
+                                                        <div class="col bg-light-success px-6 py-8 rounded-xl">
+															<span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Urgent-mail.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<rect x="0" y="0" width="24" height="24" />
+																		<path d="M12.7037037,14 L15.6666667,10 L13.4444444,10 L13.4444444,6 L9,12 L11.2222222,12 L11.2222222,14 L6,14 C5.44771525,14 5,13.5522847 5,13 L5,3 C5,2.44771525 5.44771525,2 6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,13 C19,13.5522847 18.5522847,14 18,14 L12.7037037,14 Z" fill="#000000" opacity="0.3" />
+																		<path d="M9.80428954,10.9142091 L9,12 L11.2222222,12 L11.2222222,16 L15.6666667,10 L15.4615385,10 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 L9.80428954,10.9142091 Z" fill="#000000" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-success font-weight-bold font-size-h6 mt-2">Search Member</a>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Row-->
                                                 </div>
-                                                <form:errors path="image" cssClass="text-danger"/>
+                                                <!--end::Stats-->
                                             </div>
+                                            <!--end::Body-->
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Phone Number:</label>
-                                                <form:input path="phoneNo" class="form-control"/>
-                                                <form:errors path="phoneNo" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Mobile No:</label>
-                                                <form:input path="mobileNo" class="form-control" placeholder="Enter Your Age"/>
-                                                <form:errors path="mobileNo" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Blood Group:</label>
-                                                <form:select path="bloodGroup" class="form-control selectpicker">
-                                                    <form:options items="${bloodGroupList}"></form:options>
-                                                </form:select>
-                                                <form:errors path="bloodGroup" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Email Address:</label>
-                                                <form:input path="emailAddress" class="form-control" placeholder="Enter Your Age"/>
-                                                <form:errors path="emailAddress" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Marital Status:</label>
-                                                <form:select path="maritalStatus" class="form-control selectpicker">
-                                                    <form:options items="${maritalStatusList}"></form:options>
-                                                </form:select>
-                                                <form:errors path="maritalStatus" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Pin Code :</label>
-                                                <form:input path="pinCode" class="form-control" placeholder="Enter Your Age"/>
-                                                <form:errors path="pinCode" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>Address :</label>
-                                                <form:textarea  path="address" class="form-control" name="memo" placeholder="Enter a menu" rows="3"></form:textarea>
-                                                <form:errors path="address" cssClass="text-danger"/>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label>Gender :</label>
-                                                <form:select path="gender" class="form-control selectpicker">
-                                                    <form:option  value="Male" label="Male"></form:option>
-                                                    <form:option value="Female" label="Female"></form:option>
-                                                    <form:option value="Not Given" label="Not Given"></form:option>
-                                                </form:select>
-                                                <form:errors path="pinCode" cssClass="text-danger"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-12">
-                                                <div class="card card-custom">
-                                                    <div class="card-header">
-                                                        <div class="card-title">
-                                                            <span class="card-icon">
-                                                                <i class="flaticon2-chat-1 text-primary"></i>
-                                                            </span>
-                                                            <h3 class="card-label">
-                                                                Qualification Information
-                                                            </h3>
-                                                        </div>
-                                                        <div class="card-toolbar">
-                                                            <button type="button" class="btn btn-primary mr-2 add-more-qualification">Add Qualification</button>
-                                                            <button type="button" class="btn btn-primary mr-2 delete-qualification">Remove Qualification</button>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <table class="table">
-                                                            <thead>
-                                                            <tr>
-                                                                <th><input class='check_all' type='checkbox' class="form-control" onclick="select_all()"/></th>
-                                                                <th>SR. No</th>
-                                                                <th>Name Of Course:</th>
-                                                                <th>School / University</th>
-                                                                <th>Passing Year</th>
-                                                                <th>Percentage:</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody class="qualification-body">
-                                                            <c:forEach items="${databean.qualificationInformations}" var="qi" varStatus="i">
-                                                                <tr>
-                                                                    <td><input type='checkbox' class='qualification_case' class="form-control" /></td>
-                                                                    <td><span class="row_no">${i.index+1}</span></td>
-                                                                    <td>
-                                                                        <form:input path="qualificationInformations[${i.index}].nameOfCourse" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].nameOfCourse" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="qualificationInformations[${i.index}].instituteName" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].instituteName" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="qualificationInformations[${i.index}].passingYear" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].passingYear" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="qualificationInformations[${i.index}].percentage" class="form-control"/>
-                                                                        <form:errors path="qualificationInformations[${i.index}].percentage" cssClass="text-danger"/>
-                                                                    </td>
-                                                                </tr>
-                                                            </c:forEach>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="card card-custom">
-                                                    <div class="card-header">
-                                                        <div class="card-title">
-                                                            <span class="card-icon">
-                                                                <i class="flaticon2-chat-1 text-primary"></i>
-                                                            </span>
-                                                            <h3 class="card-label">
-                                                                Revenue Information
-                                                            </h3>
-                                                        </div>
-                                                        <div class="card-toolbar">
-                                                            <button type="button" class="btn btn-primary mr-2 add-more-revenue">Add Experience</button>
-                                                            <button type="button" class="btn btn-secondary delete_revenue">Remove Experience</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <table class="table">
-                                                            <thead>
-                                                            <tr>
-                                                                <th><input class='check_all' type='checkbox' class="form-control" onclick="select_all()"/></th>
-                                                                <th>SR. No</th>
-                                                                <th>Type OF Revenue</th>
-                                                                <th>Government / Private</th>
-                                                                <th>Experience in Years</th>
-                                                                <th>Working Place</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody class="revenue-body">
-                                                            <c:forEach items="${databean.revenueInformations}" var="qi" varStatus="i">
-                                                                <tr>
-                                                                    <td><input type='checkbox' class='revenue_case' class="form-control" /></td>
-                                                                    <td><span class="row_no">${i.index+1}</span></td>
-                                                                    <td>
-                                                                        <form:input path="revenueInformations[${i.index}].typeOFRevenue" class="form-control"/>
-                                                                        <form:errors path="revenueInformations[${i.index}].typeOFRevenue" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="revenueInformations[${i.index}].typeOfJob" class="form-control"/>
-                                                                        <form:errors path="revenueInformations[${i.index}].typeOfJob" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="revenueInformations[${i.index}].experience" class="form-control"/>
-                                                                        <form:errors path="revenueInformations[${i.index}].experience" cssClass="text-danger"/>
-                                                                    </td>
-                                                                    <td>
-                                                                        <form:input path="revenueInformations[${i.index}].workingPlace" class="form-control"/>
-                                                                        <form:errors path="revenueInformations[${i.index}].workingPlace" cssClass="text-danger"/>
-                                                                    </td>
-                                                                </tr>
-                                                            </c:forEach>
-                                                            </tbody>
-                                                        </table>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <!--end::Mixed Widget 1-->
                                     </div>
-                                    <div class="card-footer">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                                <button type="reset" class="btn btn-secondary">Cancel</button>
+                                    <div class="col-xl-4">
+                                        <!--begin::Mixed Widget 2-->
+                                        <div class="card card-custom bg-gray-100 gutter-b card-stretch">
+                                            <!--begin::Header-->
+                                            <div class="card-header border-0 bg-primary py-5">
+                                                <h3 class="card-title font-weight-bolder text-white">Committee</h3>
                                             </div>
+                                            <!--end::Header-->
+                                            <!--begin::Body-->
+                                            <div class="card-body p-0 position-relative overflow-hidden">
+                                                <!--begin::Chart-->
+                                                <div id="kt_mixed_widget_2_chart" class="card-rounded-bottom bg-primary" style="height: 200px"></div>
+                                                <!--end::Chart-->
+                                                <!--begin::Stats-->
+                                                <div class="card-spacer mt-n25">
+                                                    <!--begin::Row-->
+                                                    <div class="row m-0">
+                                                        <div class="col bg-white px-6 py-8 rounded-xl mr-7 mb-7">
+															<span class="svg-icon svg-icon-3x svg-icon-info d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Media/Equalizer.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<rect x="0" y="0" width="24" height="24" />
+																		<rect fill="#000000" opacity="0.3" x="13" y="4" width="3" height="16" rx="1.5" />
+																		<rect fill="#000000" x="8" y="9" width="3" height="11" rx="1.5" />
+																		<rect fill="#000000" x="18" y="11" width="3" height="9" rx="1.5" />
+																		<rect fill="#000000" x="3" y="13" width="3" height="7" rx="1.5" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-info font-weight-bold font-size-h6">Monthly Registered Committee</a>
+                                                        </div>
+                                                        <div class="col bg-white px-6 py-8 rounded-xl mb-7">
+															<span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Add-user.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<polygon points="0 0 24 0 24 24 0 24" />
+																		<path d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+																		<path d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-warning font-weight-bold font-size-h6 mt-2">New Committee</a>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Row-->
+                                                    <!--begin::Row-->
+                                                    <div class="row m-0">
+                                                        <div class="col bg-white px-6 py-8 rounded-xl mr-7">
+															<span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<polygon points="0 0 24 0 24 24 0 24" />
+																		<path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z" fill="#000000" fill-rule="nonzero" />
+																		<path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" fill="#000000" opacity="0.3" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-danger font-weight-bold font-size-h6 mt-2">Alter Committee</a>
+                                                        </div>
+                                                        <div class="col bg-white px-6 py-8 rounded-xl">
+															<span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Urgent-mail.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<rect x="0" y="0" width="24" height="24" />
+																		<path d="M12.7037037,14 L15.6666667,10 L13.4444444,10 L13.4444444,6 L9,12 L11.2222222,12 L11.2222222,14 L6,14 C5.44771525,14 5,13.5522847 5,13 L5,3 C5,2.44771525 5.44771525,2 6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,13 C19,13.5522847 18.5522847,14 18,14 L12.7037037,14 Z" fill="#000000" opacity="0.3" />
+																		<path d="M9.80428954,10.9142091 L9,12 L11.2222222,12 L11.2222222,16 L15.6666667,10 L15.4615385,10 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 L9.80428954,10.9142091 Z" fill="#000000" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-success font-weight-bold font-size-h6 mt-2">Search Committee</a>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Row-->
+                                                </div>
+                                                <!--end::Stats-->
+                                            </div>
+                                            <!--end::Body-->
                                         </div>
+                                        <!--end::Mixed Widget 2-->
                                     </div>
-                                </form:form>
+                                    <div class="col-xl-4">
+                                        <!--begin::Mixed Widget 3-->
+                                        <div class="card card-custom bg-gray-100 gutter-b card-stretch">
+                                            <!--begin::Header-->
+                                            <div class="card-header border-0 bg-dark py-5">
+                                                <h3 class="card-title font-weight-bolder text-white">Notices And Links</h3>
+                                            </div>
+                                            <!--end::Header-->
+                                            <!--begin::Body-->
+                                            <div class="card-body p-0 position-relative overflow-hidden">
+                                                <!--begin::Chart-->
+                                                <div id="kt_mixed_widget_3_chart" class="card-rounded-bottom bg-dark" style="height: 200px"></div>
+                                                <!--end::Chart-->
+                                                <!--begin::Stats-->
+                                                <div class="card-spacer mt-n25">
+                                                    <!--begin::Row-->
+                                                    <div class="row m-0">
+                                                        <div class="col bg-white px-6 py-8 rounded-xl mr-7 mb-7">
+															<span class="svg-icon svg-icon-3x svg-icon-gray-500 d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Media/Equalizer.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<rect x="0" y="0" width="24" height="24" />
+																		<rect fill="#000000" opacity="0.3" x="13" y="4" width="3" height="16" rx="1.5" />
+																		<rect fill="#000000" x="8" y="9" width="3" height="11" rx="1.5" />
+																		<rect fill="#000000" x="18" y="11" width="3" height="9" rx="1.5" />
+																		<rect fill="#000000" x="3" y="13" width="3" height="7" rx="1.5" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-dark font-weight-bold font-size-h6">Montly Registered Notices And Links</a>
+                                                        </div>
+                                                        <div class="col bg-white px-6 py-8 rounded-xl mb-7">
+															<span class="svg-icon svg-icon-3x svg-icon-gray-500 d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Add-user.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<polygon points="0 0 24 0 24 24 0 24" />
+																		<path d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+																		<path d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-dark font-weight-bold font-size-h6 mt-2">New Notice</a>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Row-->
+                                                    <!--begin::Row-->
+                                                    <div class="row m-0">
+                                                        <div class="col bg-white px-6 py-8 rounded-xl mr-7">
+															<span class="svg-icon svg-icon-3x svg-icon-gray-500 d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<polygon points="0 0 24 0 24 24 0 24" />
+																		<path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z" fill="#000000" fill-rule="nonzero" />
+																		<path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" fill="#000000" opacity="0.3" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-dark font-weight-bold font-size-h6 mt-2">Alter Notice</a>
+                                                        </div>
+                                                        <div class="col bg-white px-6 py-8 rounded-xl">
+															<span class="svg-icon svg-icon-3x svg-icon-gray-500 d-block my-2">
+																<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Urgent-mail.svg-->
+																<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																		<rect x="0" y="0" width="24" height="24" />
+																		<path d="M12.7037037,14 L15.6666667,10 L13.4444444,10 L13.4444444,6 L9,12 L11.2222222,12 L11.2222222,14 L6,14 C5.44771525,14 5,13.5522847 5,13 L5,3 C5,2.44771525 5.44771525,2 6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,13 C19,13.5522847 18.5522847,14 18,14 L12.7037037,14 Z" fill="#000000" opacity="0.3" />
+																		<path d="M9.80428954,10.9142091 L9,12 L11.2222222,12 L11.2222222,16 L15.6666667,10 L15.4615385,10 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 L9.80428954,10.9142091 Z" fill="#000000" />
+																	</g>
+																</svg>
+                                                                <!--end::Svg Icon-->
+															</span>
+                                                            <a href="#" class="text-dark font-weight-bold font-size-h6 mt-2">Search Notice</a>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Row-->
+                                                </div>
+                                                <!--end::Stats-->
+                                            </div>
+                                            <!--end::Body-->
+                                        </div>
+                                        <!--end::Mixed Widget 3-->
+                                    </div>
+                                </div>
+                                <!--end::Row-->
                             </div>
                         </div>
                     </div>
@@ -594,100 +625,23 @@
     <!--end::Page-->
 </div>
 <!--end::Main-->
-</body>
-<!--begin::Global Config(global config for global JS scripts)-->
-<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+
+<!--begin::Demo Panel-->
+<div id="kt_demo_panel" class="offcanvas offcanvas-right p-10">
+    <!--begin::Header-->
+    <div class="offcanvas-header d-flex align-items-center justify-content-between pb-7">
+        <h4 class="font-weight-bold m-0">Select A Demo</h4>
+        <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_demo_panel_close">
+            <i class="ki ki-close icon-xs text-muted"></i>
+        </a>
+    </div>
+    <!--end::Header-->
+</div>
+<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#6993FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#E1E9FF", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
 <!--end::Global Config-->
-<!--begin::Global Theme Bundle(used by all pages)-->
-<script src="<c:url value="plugins/global/plugins.bundle.js"></c:url>"></script>
-<script src="<c:url value="plugins/custom/prismjs/prismjs.bundle.js"></c:url>"></script>
-<script src="<c:url value="js/scripts.bundle.js"></c:url>"></script>
-<!--end::Global Theme Bundle-->
-<!--begin::Page Vendors(used by this page)-->
-<script src="<c:url value="plugins/custom/fullcalendar/fullcalendar.bundle.js"></c:url>"></script>
-<!--end::Page Vendors-->
-<!--begin::Page Scripts(used by this page)-->
-<script src="<c:url value="js/pages/widgets.js"></c:url>"></script>
-<!--end::Page Scripts-->
 
-<script type="text/javascript">
-    function select_all() {
-        $('input[class=case]:checkbox').each(function(){
-            if($('input[class=check_all]:checkbox:checked').length == 0){
-                $(this).prop("checked", false);
-            } else {
-                $(this).prop("checked", true);
-            }
-        });
-    }
-
-    $(document).ready(function() {
-        var index = $('.qualification-body').length;
-        var index_revenue = $('.revenue-body').length;
-
-        $(".add-more-qualification").click(function(){
-            index++;
-            var data="<tr><td><input type='checkbox' class='qualification_case' class='form-control' /></td><td><span class='row_no'>"+index+"</span></td><td><input name='qualificationInformations["+index+"].nameOfCourse' class='form-control'/></td><td><input name='qualificationInformations["+index+"].instituteName' class='form-control'/></td><td><input name='qualificationInformations["+index+"].passingYear' class='form-control'/></td><td><input name='qualificationInformations["+index+"].percentage' class='form-control'/></td></tr>";
-            $(".qualification-body").append(data);
-
-        });
-
-        $(".add-more-revenue").click(function(){
-            index_revenue++;
-            var data="<tr><td><input type='checkbox' class='revenue_case' class='form-control' /></td><td><span class='row_no'>"+index_revenue+"</span></td><td><input name='revenueInformations["+index_revenue+"].typeOFRevenue' class='form-control'/></td><td><input name='revenueInformations["+index_revenue+"].typeOfJob' class='form-control'/></td><td><input name='revenueInformations["+index_revenue+"].experience' class='form-control'/></td><td><input name='revenueInformations["+index_revenue+"].workingPlace' class='form-control'/></td></tr>";
-            $(".revenue-body").append(data);
-
-        });
-
-        $(".delete-qualification").on('click', function() {
-            $('.qualification_case:checkbox:checked').parents("tr").remove();
-            $('.row_no').each((k,ele)=>{
-                $(ele).html(k+1+'.')
-            });
-            var row=0;
-            $(".qualification-body tr").each(function() {
-                $(this).find("td:nth-child(3) input").attr('name','qualificationInformations['+row+'].nameOfCourse');
-                $(this).find("td:nth-child(4) input").attr('name','qualificationInformations['+row+'].instituteName');
-                $(this).find("td:nth-child(5) input").attr('name','qualificationInformations['+row+'].passingYear');
-                $(this).find("td:nth-child(6) input").attr('name','qualificationInformations['+row+'].percentage');
-                $(this).find("td:nth-child(3) input").attr('id','qualificationInformations['+row+'].nameOfCourse');
-                $(this).find("td:nth-child(4) input").attr('id','qualificationInformations['+row+'].instituteName');
-                $(this).find("td:nth-child(5) input").attr('id','qualificationInformations['+row+'].passingYear');
-                $(this).find("td:nth-child(6) input").attr('id','qualificationInformations['+row+'].percentage');
-                $(this).find("td:nth-child(3) input").attr('path','qualificationInformations['+row+'].nameOfCourse');
-                $(this).find("td:nth-child(4) input").attr('path','qualificationInformations['+row+'].instituteName');
-                $(this).find("td:nth-child(5) input").attr('path','qualificationInformations['+row+'].passingYear');
-                $(this).find("td:nth-child(6) input").attr('path','qualificationInformations['+row+'].percentage');
-                row++;
-            });
-        });
-
-        $(".delete_revenue").on('click', function() {
-            $('.revenue_case:checkbox:checked').parents("tr").remove();
-            $('.row_no').each((k,ele)=>{
-                $(ele).html(k+1+'.')
-            });
-            var row=0;
-            $(".revenue-body tr").each(function() {
-                $(this).find("td:nth-child(3) input").attr('name','revenueInformations['+row+'].typeOFRevenue');
-                $(this).find("td:nth-child(4) input").attr('name','revenueInformations['+row+'].typeOfJob');
-                $(this).find("td:nth-child(5) input").attr('name','revenueInformations['+row+'].experience');
-                $(this).find("td:nth-child(6) input").attr('name','revenueInformations['+row+'].workingPlace');
-                $(this).find("td:nth-child(3) input").attr('id','revenueInformations['+row+'].typeOFRevenue');
-                $(this).find("td:nth-child(4) input").attr('id','revenueInformations['+row+'].typeOfJob');
-                $(this).find("td:nth-child(5) input").attr('id','revenueInformations['+row+'].experience');
-                $(this).find("td:nth-child(6) input").attr('id','revenueInformations['+row+'].workingPlace');
-                $(this).find("td:nth-child(3) input").attr('path','revenueInformations['+row+'].typeOFRevenue');
-                $(this).find("td:nth-child(4) input").attr('path','revenueInformations['+row+'].typeOfJob');
-                $(this).find("td:nth-child(5) input").attr('path','revenueInformations['+row+'].experience');
-                $(this).find("td:nth-child(6) input").attr('path','revenueInformations['+row+'].workingPlace');
-                row++;
-            });
-        });
-
-    });
-
-
-</script>
-
+<script src="<c:url value="/resources/plugins/global/plugins.bundle.js"></c:url>"></script>
+<script src="<c:url value="/resources/plugins/custom/prismjs/prismjs.bundle.js"></c:url>"></script>
+<script src="<c:url value="/resources/js/scripts.bundle.js"></c:url>"></script>
+</body>
 </html>
