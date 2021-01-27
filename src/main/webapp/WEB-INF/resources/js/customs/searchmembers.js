@@ -45,6 +45,14 @@ var KTDatatableHtmlTableDemo = function() {
           type: 'string',
         },
         {
+          field: 'Village',
+          type: 'string',
+        },
+        {
+          field: 'Street',
+          type: 'string',
+        },
+        {
           field: 'View',
           type: 'string',
         },

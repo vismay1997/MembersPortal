@@ -101,6 +101,20 @@
         </div>
         <div class="form-group row">
             <div class="col-lg-3">
+                <label>Village:</label>
+            </div>
+            <div class="col-lg-3">
+                <div>${databean.village}</div>
+            </div>
+            <div class="col-lg-3">
+                <label>Street:</label>
+            </div>
+            <div class="col-lg-3">
+                <div>${databean.street}</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg-3">
                 <label>Pin Code:</label>
             </div>
             <div class="col-lg-3">
@@ -112,9 +126,9 @@
                 <div class="card card-custom">
                     <div class="card-header">
                         <div class="card-title">
-                                                        <span class="card-icon">
-                                                            <i class="flaticon2-chat-1 text-primary"></i>
-                                                        </span>
+                                <span class="card-icon">
+                                    <i class="flaticon2-chat-1 text-primary"></i>
+                                </span>
                             <h3 class="card-label">
                                 Qualification Information
                             </h3>

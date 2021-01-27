@@ -34,6 +34,8 @@ public class MemberRegisterValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "maritalStatus", "error.message.required", "Marital Status Time is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pinCode", "error.message.required", "Pin Code Time is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "address", "error.message.required", "Address Time is required.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "village", "error.message.required", "Village Time is required.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "street", "error.message.required", "Street Time is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "gender", "error.message.required", "Gender is required.");
 
 

@@ -48,9 +48,11 @@
                 <th title="Field #3">Email Address</th>
                 <th title="Field #4">Pin Code</th>
                 <th title="Field #5">Address</th>
-                <th title="Field #6">View</th>
-                <th title="Field #7">Edit</th>
-                <th title="Field #8">Status</th>
+                <th title="Field #6">Village</th>
+                <th title="Field #7">Street</th>
+                <th title="Field #8">View</th>
+                <th title="Field #9">Edit</th>
+                <th title="Field #10">Status</th>
             </tr>
             </thead>
             <tbody>
@@ -62,6 +64,8 @@
                     <td>${item.emailAddress}</td>
                     <td>${item.pinCode}</td>
                     <td>${item.address}</td>
+                    <td>${item.village}</td>
+                    <td>${item.street}</td>
                     <td class="text-right"><a href="/view-member?id=${item.memberId}" class="btn btn-primary">View Member</a></td>
                     <td class="text-right"><a href="/edit-member?id=${item.memberId}" class="btn btn-primary">Edit Member</a></td>
                     <td>${item.status}</td>

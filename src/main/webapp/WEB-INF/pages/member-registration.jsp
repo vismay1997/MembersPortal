@@ -117,6 +117,18 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label>Village :</label>
+                        <form:input  path="village" class="form-control" name="memo" placeholder="Enter Address" rows="3"></form:input>
+                        <form:errors path="village" cssClass="text-danger"/>
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Street :</label>
+                        <form:input  path="street" class="form-control" name="memo" placeholder="Enter Address" rows="3"></form:input>
+                        <form:errors path="street" cssClass="text-danger"/>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <div class="col-lg-12">
                         <div class="card card-custom">
                             <div class="card-header">

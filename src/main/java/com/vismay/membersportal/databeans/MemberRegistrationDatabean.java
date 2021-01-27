@@ -20,6 +20,8 @@ public class MemberRegistrationDatabean {
     private String maritalStatus;
     private String pinCode;
     private String  address;
+    private String village;
+    private String street;
     private String status;
     private String image;
     private String chiefOfFamily;
@@ -115,6 +117,22 @@ public class MemberRegistrationDatabean {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getVillage() {
+        return village;
+    }
+
+    public void setVillage(String village) {
+        this.village = village;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
     }
 
     public List<RevenueInformation> getRevenueInformations() {
