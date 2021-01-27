@@ -62,8 +62,8 @@
                     <td>${item.emailAddress}</td>
                     <td>${item.pinCode}</td>
                     <td>${item.address}</td>
-                    <td class="text-right"><a href="/view-member?id=${item.memberId}" class="btn btn-primary">View Marquee</a></td>
-                    <td class="text-right"><a href="/edit-member?id=${item.memberId}" class="btn btn-primary">Edit Marquee</a></td>
+                    <td class="text-right"><a href="/view-member?id=${item.memberId}" class="btn btn-primary">View Member</a></td>
+                    <td class="text-right"><a href="/edit-member?id=${item.memberId}" class="btn btn-primary">Edit Member</a></td>
                     <td>${item.status}</td>
                 </tr>
             </c:forEach>
