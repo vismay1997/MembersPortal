@@ -38,7 +38,7 @@
                     <div class="d-flex align-items-stretch mr-3">
                         <!--begin::Header Logo-->
                         <div class="header-logo">
-                            <a href="index.html"></a>
+                            <a href="<c:url value="/"></c:url>"></a>
                         </div>
                         <!--end::Header Logo-->
                         <!--begin::Header Menu Wrapper-->
@@ -65,6 +65,17 @@
                                 </div>
                             </div>
                             <div class="card-body">
+                                <c:if test="${message != null}">
+                                    <div class="alert alert-custom alert-light-primary fade show mb-5" role="alert">
+                                        <div class="alert-icon"><i class="flaticon-warning"></i></div>
+                                        <div class="alert-text">${message}</div>
+                                        <div class="alert-close">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </c:if>
                                 <decorator:placeholder name="content"></decorator:placeholder>
                             </div>
                         </div>

@@ -6,6 +6,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec"  uri="http://www.springframework.org/security/tags" %>
 
 <!--begin::Header Menu Wrapper-->
 <div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
@@ -22,7 +23,7 @@
                 <div class="menu-submenu menu-submenu-classic menu-submenu-left">
                     <ul class="menu-subnav">
                         <li class="menu-item" aria-haspopup="true">
-                            <a href="<c:url value="/member-registration"></c:url>" class="menu-link">
+                            <a href="<c:url value="/create-member"></c:url>" class="menu-link">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Safe-chat.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -232,5 +233,18 @@
         <!--end::Header Nav-->
     </div>
     <!--end::Header Menu-->
+    <div sec:authorize="isAuthenticated()">
+        <div class="topbar">
+            <!--begin::User-->
+            <div class="topbar-item">
+                <div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
+                    <span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
+                        <a href="<c:url value="/logout"></c:url>" class="btn btn-primary mt-5" >LogOut</a>
+                    </span>
+                </div>
+            </div>
+            <!--end::User-->
+        </div>
+    </div>
 </div>
 <!--end::Header Menu Wrapper-->
