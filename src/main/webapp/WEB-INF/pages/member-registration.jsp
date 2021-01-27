@@ -39,8 +39,8 @@
                         <form:errors path="chiefOfFamily" cssClass="text-danger"/>
                     </div>
                     <div class="col-lg-6">
-                        <label>Chief Name:</label>
-                        <form:input path="chiefName" class="form-control" placeholder="Enter Your BirthDate"/>
+                        <label>Member Id:</label>
+                        <form:input path="chiefName" class="form-control" placeholder="Enter Member Id"/>
                         <form:errors path="chiefName" cssClass="text-danger"/>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-lg-6">
                         <label>Mobile No:</label>
-                        <form:input path="mobileNo" class="form-control" placeholder="Enter Your Age"/>
+                        <form:input path="mobileNo" class="form-control" placeholder="Enter Your Mobile No."/>
                         <form:errors path="mobileNo" cssClass="text-danger"/>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="col-lg-6">
                         <label>Email Address:</label>
-                        <form:input path="emailAddress" class="form-control" placeholder="Enter Your Age"/>
+                        <form:input path="emailAddress" class="form-control" placeholder="Enter Your Email Address"/>
                         <form:errors path="emailAddress" cssClass="text-danger"/>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                 <div class="form-group row">
                     <div class="col-lg-6">
                         <label>Address :</label>
-                        <form:textarea  path="address" class="form-control" name="memo" placeholder="Enter a menu" rows="3"></form:textarea>
+                        <form:textarea  path="address" class="form-control" name="memo" placeholder="Enter Address" rows="3"></form:textarea>
                         <form:errors path="address" cssClass="text-danger"/>
                     </div>
                     <div class="col-lg-6">
@@ -121,9 +121,9 @@
                         <div class="card card-custom">
                             <div class="card-header">
                                 <div class="card-title">
-                                                            <span class="card-icon">
-                                                                <i class="flaticon2-chat-1 text-primary"></i>
-                                                            </span>
+                                        <span class="card-icon">
+                                            <i class="flaticon2-chat-1 text-primary"></i>
+                                        </span>
                                     <h3 class="card-label">
                                         Qualification Information
                                     </h3>
@@ -178,9 +178,9 @@
                         <div class="card card-custom">
                             <div class="card-header">
                                 <div class="card-title">
-                                                            <span class="card-icon">
-                                                                <i class="flaticon2-chat-1 text-primary"></i>
-                                                            </span>
+                                        <span class="card-icon">
+                                            <i class="flaticon2-chat-1 text-primary"></i>
+                                        </span>
                                     <h3 class="card-label">
                                         Revenue Information
                                     </h3>
