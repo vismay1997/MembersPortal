@@ -69,7 +69,7 @@ public class MemberRegistrationController {
         return "member-registration";
     }
 
-    @PostMapping(path = "/member-registration")
+    @PostMapping(path = "/create-member")
     public String RegisterMember(@ModelAttribute("databean") MemberRegistrationDatabean memberRegistrationDatabean,
                                  @RequestParam("profilePic") MultipartFile multipartFile,BindingResult result,
                                         Model model, RedirectAttributes redirectAttributes) throws FileStorageException, ParseException {
