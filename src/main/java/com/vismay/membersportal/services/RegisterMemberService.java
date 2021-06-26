@@ -50,4 +50,16 @@ public class RegisterMemberService {
 
         return registerMemberDao.save(memberRegistrationDatabean);
     }
+
+    public List<String> getAllVillages() {
+        return registerMemberDao.getAllVillages();
+    }
+
+    public List<String> getAllStreets() {
+        return registerMemberDao.getAllStreets();
+    }
+
+    public List<MemberRegistrationDatabean> getMemberData(String village, String street, String mobileNo, String pinCode) {
+        return registerMemberDao.getMemberData(village,street,mobileNo,pinCode);
+    }
 }
