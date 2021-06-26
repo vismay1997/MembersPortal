@@ -11,49 +11,39 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="decorator" uri="http://claudiushauptmann.com/jsp-decorator/" %>
 
-<decorator:decorate filename="template.jsp">
-    <decorator:content placeholder="title">View Notice Information</decorator:content>
-    <decorator:content placeholder="pagetitle">View Notice Information</decorator:content>
+<decorator:decorate filename="template-home.jsp">
+    <decorator:content placeholder="title">View Notification Information</decorator:content>
+    <decorator:content placeholder="pagetitle">View Notification Information</decorator:content>
     <decorator:content placeholder="content">
         <div class="card">
             <div class="card-body">
-                <div class="form-group row">
-                    <div class="col-lg-3">
-                        <label>Notice Title</label>
-                    </div>
-                    <div class="col-lg-6">
-                        <div>${databean.noticeTitle}</div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-lg-3">
-                        <label>Notice Image / Logo:</label>
-                    </div>
-                    <div class="col-lg-6">
-                        <div><img src="/getimage?id=${databean.noticeLogo}" height="50px" width="50px"></div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-lg-3">
-                        <label>Notice Description:</label>
-                    </div>
-                    <div class="col-lg-6">
-                        <div>${databean.noticeDescription}</div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-lg-3">
-                        <label>Supporting Document</label>
-                    </div>
-                    <div class="col-lg-6">
-                        <div><a href="/getimage?id=${databean.supportingDocs}" class="btn btn-primary" height="50px" width="50px">Download</a></div>
-                    </div>
-                </div>
+                <c:forEach items="${marqueelist}" var="item">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">Notification Name</th>
+                            <th scope="col">Notification Description</th>
+                            <th scope="col">Notification Image / Logo:</th>
+                            <th scope="col">Notification Start Timing:</th>
+                            <th scope="col">Notification End Timing:</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>${item.title}</td>
+                            <td>${item.description}</td>
+                            <td><img src="/getimage?id=${item.image}" height="50px" width="50px"></td>
+                            <td>${item.startDateTime}</td>
+                            <td>${item.endDateTime}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </c:forEach>
             </div>
             <div class="card-footer">
                 <div class="row">
                     <div class="col-lg-8">
-                        <a href="<c:url value="/search-notice"></c:url>" class="btn btn-primary mr-2">Go Back</a>
+                        <a href="<c:url value="/"></c:url>" class="btn btn-primary mr-2">Go Back</a>
                     </div>
                 </div>
             </div>

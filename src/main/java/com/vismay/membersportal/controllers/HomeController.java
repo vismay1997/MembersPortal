@@ -1,5 +1,7 @@
 package com.vismay.membersportal.controllers;
 
+import com.vismay.membersportal.services.CommiteeManagementService;
+import com.vismay.membersportal.services.ContactInformationServices;
 import com.vismay.membersportal.services.MarqueeService;
 import com.vismay.membersportal.services.NoticeSectionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,13 @@ public class HomeController {
 
     @Autowired
     private NoticeSectionService noticeSectionService;
+
+    @Autowired
+    private CommiteeManagementService commiteeManagementService;
+
+    @Autowired
+    private ContactInformationServices contactInformationServices;
+
     @GetMapping(path = "/")
     public String getHome(Model model){
         model.addAttribute("marqueelist",marqueeService.getAllMarqueesList());
@@ -22,27 +31,27 @@ public class HomeController {
     }
 
     @GetMapping(path = "/home-notices")
-    public String getNotices(){
+    public String getNotices(Model model){
+        model.addAttribute("noticeList",noticeSectionService.getAllNoticesList());
         return "home-notice";
     }
 
     @GetMapping(path = "/home-marquee")
-    public String getMarquee(){
+    public String getMarquee(Model model){
+        model.addAttribute("marqueelist",marqueeService.getAllMarqueesList());
         return "home-marquee";
     }
 
     @GetMapping(path = "/home-commitee")
-    public String getCommitee(){
+    public String getCommitee(Model model){
+        model.addAttribute("commiteelist",commiteeManagementService.getAllCommiteeList());
         return "home-commitee";
     }
 
-    @GetMapping(path = "/home-aboutus")
-    public String getAboutUs(){
-        return "home-aboutus";
-    }
-
     @GetMapping(path = "/home-contactus")
-    public String getContactUs(){
+    public String getContactUs(Model model){
+       model.addAttribute("contactList",contactInformationServices.getAllContactInformation());
+
         return "home-contactus";
     }
 }

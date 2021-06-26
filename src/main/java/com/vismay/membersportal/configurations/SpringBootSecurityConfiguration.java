@@ -58,7 +58,9 @@ public class SpringBootSecurityConfiguration extends WebSecurityConfigurerAdapte
                 .antMatchers("/home-notices").permitAll()
                 .antMatchers("/home-marquee").permitAll()
                 .antMatchers("/home-aboutus").permitAll()
-                .antMatchers("/home-contactus").permitAll().
+                .antMatchers("/home-contactus").permitAll()
+                .antMatchers("/getimage").permitAll().
+
                 antMatchers("/").permitAll()
 
                 .anyRequest().authenticated()

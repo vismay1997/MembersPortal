@@ -63,15 +63,12 @@
                         <a class="nav-link btn-outline-primary rounded-pill px-3" href="<c:url value="/home-commitee"></c:url>">Commitee Information</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn-outline-primary rounded-pill px-3" href="<c:url value="/home-aboutus"></c:url>">About US</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link btn-outline-primary rounded-pill px-3" href="<c:url value="/home-contactus"></c:url>">Contact US</a>
                     </li>
                 </ul>
             </div>
             <div class="navbar align-self-center d-flex">
-                <a class="nav-link" href="#"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+                <a class="nav-link" href="<c:url value="/login"></c:url>"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
             </div>
         </div>
     </div>
@@ -482,9 +479,6 @@
                         </li>
                         <li class="pb-2">
                             <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="<c:url value="/home-commitee"></c:url>">Commitee Information</a>
-                        </li>
-                        <li class="pb-2">
-                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i></i><a class="text-decoration-none text-light py-1" href="<c:url value="/home-aboutus"></c:url>">About US</a>
                         </li>
                         <li class="pb-2">
                             <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="<c:url value="/home-contactus"></c:url>">Contact US</a>
