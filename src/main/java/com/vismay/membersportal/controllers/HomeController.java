@@ -20,4 +20,29 @@ public class HomeController {
         model.addAttribute("noticeList",noticeSectionService.getAllNoticesList());
         return "index";
     }
+
+    @GetMapping(path = "/home-notices")
+    public String getNotices(){
+        return "home-notice";
+    }
+
+    @GetMapping(path = "/home-marquee")
+    public String getMarquee(){
+        return "home-marquee";
+    }
+
+    @GetMapping(path = "/home-commitee")
+    public String getCommitee(){
+        return "home-commitee";
+    }
+
+    @GetMapping(path = "/home-aboutus")
+    public String getAboutUs(){
+        return "home-aboutus";
+    }
+
+    @GetMapping(path = "/home-contactus")
+    public String getContactUs(){
+        return "home-contactus";
+    }
 }

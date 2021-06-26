@@ -54,6 +54,13 @@ public class SpringBootSecurityConfiguration extends WebSecurityConfigurerAdapte
                 .antMatchers("/auditor").hasAnyRole("AUDITOR","ADMIN","SADMIN")
                 .antMatchers("/committee-member").hasAnyRole("CMEMBER","ADMIN","SADMIN")
                 .antMatchers("/member").hasAnyRole("MEMBER","AUDITOR","ADMIN","CMEMBER","SADMIN")
+                .antMatchers("/home-commitee").permitAll()
+                .antMatchers("/home-notices").permitAll()
+                .antMatchers("/home-marquee").permitAll()
+                .antMatchers("/home-aboutus").permitAll()
+                .antMatchers("/home-contactus").permitAll().
+                antMatchers("/").permitAll()
+
                 .anyRequest().authenticated()
                 .and().formLogin().loginPage("/login")
                 .successHandler(successHandler)
