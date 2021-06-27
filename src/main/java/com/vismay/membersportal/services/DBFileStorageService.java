@@ -39,4 +39,8 @@ public class DBFileStorageService {
         return dbFileRepository.findById(fileId)
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
     }
+
+    public FilesUploadDataBean getFileFromId(String fileId){
+        return dbFileRepository.getFileFromId(fileId);
+    }
 }

@@ -2,8 +2,6 @@ package com.vismay.membersportal.services;
 
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
-import com.itextpdf.kernel.font.PdfFont;
-import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -12,16 +10,15 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.BackgroundImage;
-import com.itextpdf.layout.property.Property;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
 import com.vismay.membersportal.databeans.CommiteeDatabean;
 import com.vismay.membersportal.databeans.CommiteeMemberDataBean;
+import com.vismay.membersportal.databeans.FilesUploadDataBean;
 import com.vismay.membersportal.databeans.MemberRegistrationDatabean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.awt.*;
 import java.io.File;
 import java.util.List;
 
@@ -31,6 +28,11 @@ public class DocumentGenerationService {
     private static String fileName="C:/Users/visma/Downloads/member-basic.pdf";
     private static String chiefFileName="C:/Users/visma/Downloads/member-chief.pdf";
     private static String commiteeFileName="C:/Users/visma/Downloads/commitee-informtation.pdf";
+    private static String memberBook="C:/Users/visma/Downloads/samaj-Book.pdf";
+
+    @Autowired
+    private DBFileStorageService dbFileStorageService;
+
     public  void generateMemberBasicInformationPdf(List<MemberRegistrationDatabean> allMemberList) throws Exception {
 
         File file = new File(fileName);
@@ -77,6 +79,126 @@ public class DocumentGenerationService {
 
 
     }
+
+    public  void generateMemberBook(List<MemberRegistrationDatabean> allMemberList) throws Exception {
+
+        File file = new File(memberBook);
+        file.getParentFile().mkdirs();
+
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(memberBook));
+        Document doc = new Document(pdfDoc, PageSize.Default);
+        doc.setMargins(0 , 0, 0, 0);
+
+        ImageData imageData = ImageDataFactory.create("C:/Users/visma/Downloads/logo.jpg");
+        Image pdfImg = new Image(imageData);
+        pdfImg.setAutoScale(true);
+        doc.add(pdfImg);
+
+        Table partationTable = new Table(1).useAllAvailableWidth();
+        partationTable.setTextAlignment(TextAlignment.CENTER);
+        partationTable.setKeepTogether(true);
+
+
+        partationTable.setMarginTop(30);
+        partationTable.setMarginLeft(10);
+        partationTable.setMarginRight(10);
+        partationTable.setMarginBottom(10);
+
+
+
+        for (MemberRegistrationDatabean databean:allMemberList) {
+
+
+            Table memberDetailTable = new Table(UnitValue.createPercentArray(new float[]{2,2,2,2})).useAllAvailableWidth();
+            memberDetailTable.setTextAlignment(TextAlignment.LEFT);
+            memberDetailTable.setPadding(1);
+
+
+
+
+
+            FilesUploadDataBean filesUploadDataBean=dbFileStorageService.getFileFromId(databean.getImage());
+
+            ImageData data = ImageDataFactory.create(filesUploadDataBean.getData());
+
+            Image image = new Image(data);
+            image.setHeight(150);
+            image.setWidth(150);
+
+            Cell photoCell=new Cell();
+            photoCell.add(image);
+            photoCell.setPadding(10);
+
+            Cell fullNameCell=new Cell(0,3);
+            fullNameCell.add(setCellValue(databean.getFullName()));
+            fullNameCell.setPadding(10);
+
+
+            memberDetailTable.addCell(photoCell);
+
+            //memberDetailTable.addCell(setCellValue("Full Name  "));
+            memberDetailTable.addCell(fullNameCell);
+
+            memberDetailTable.addCell(setCellValue("Member ID "));
+            memberDetailTable.addCell(setCellValue(databean.getGender()));
+
+            memberDetailTable.addCell(setCellValue("Gender "));
+            memberDetailTable.addCell(setCellValue(databean.getMemberId().toString()));
+
+            memberDetailTable.addCell(setCellValue("Age "));
+            memberDetailTable.addCell(setCellValue(databean.getAge()));
+
+            memberDetailTable.addCell(setCellValue("Mobile No. "));
+            memberDetailTable.addCell(setCellValue(databean.getMobileNo()));
+
+            memberDetailTable.addCell(setCellValue("Email Address "));
+            memberDetailTable.addCell(setCellValue(databean.getEmailAddress()));
+
+            memberDetailTable.addCell(setCellValue("Birth date"));
+            memberDetailTable.addCell(setCellValue(databean.getBirthDate()));
+
+            memberDetailTable.addCell(setCellValue("Blood Group"));
+            memberDetailTable.addCell(setCellValue(databean.getBloodGroup()));
+
+            memberDetailTable.addCell(setCellValue("Marital Status"));
+            memberDetailTable.addCell(setCellValue(databean.getMaritalStatus()));
+
+            memberDetailTable.addCell(setCellValue("Address"));
+            memberDetailTable.addCell(setCellValue(databean.getAddress()));
+
+            memberDetailTable.addCell(setCellValue("Village"));
+            memberDetailTable.addCell(setCellValue(databean.getVillage()));
+
+            memberDetailTable.addCell(setCellValue("Street"));
+            memberDetailTable.addCell(setCellValue(databean.getStreet()));
+
+            memberDetailTable.addCell(setCellValue("Pin Code"));
+            memberDetailTable.addCell(setCellValue(databean.getPinCode()));
+
+
+
+
+            Cell memberDetailCell=new Cell().add(memberDetailTable);
+            memberDetailCell.setPaddingBottom(10);
+
+            partationTable.addCell(memberDetailCell);
+
+
+
+        }
+
+
+
+
+        doc.add(partationTable);
+
+        doc.close();
+
+
+
+    }
+
+
 
     public  void generateChiefMemberInformationPdf(List<MemberRegistrationDatabean> allMemberList) throws Exception {
 
