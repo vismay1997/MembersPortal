@@ -1,21 +1,20 @@
 package com.vismay.membersportal.services;
 
+import com.itextpdf.barcodes.BarcodeQRCode;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.canvas.draw.DottedLine;
+import com.itextpdf.kernel.pdf.canvas.draw.SolidLine;
+import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.element.Cell;
-import com.itextpdf.layout.element.Image;
-import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
-import com.vismay.membersportal.databeans.CommiteeDatabean;
-import com.vismay.membersportal.databeans.CommiteeMemberDataBean;
-import com.vismay.membersportal.databeans.FilesUploadDataBean;
-import com.vismay.membersportal.databeans.MemberRegistrationDatabean;
+import com.vismay.membersportal.databeans.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +28,7 @@ public class DocumentGenerationService {
     private static String chiefFileName="C:/Users/visma/Downloads/member-chief.pdf";
     private static String commiteeFileName="C:/Users/visma/Downloads/commitee-informtation.pdf";
     private static String memberBook="C:/Users/visma/Downloads/samaj-Book.pdf";
+    private static String personalIdentityCard="C:/Users/visma/Downloads/personal-identity-card.pdf";
 
     @Autowired
     private DBFileStorageService dbFileStorageService;
@@ -313,6 +313,178 @@ public class DocumentGenerationService {
         }
 
         doc.add(table);
+
+        doc.close();
+
+
+
+    }
+
+    public  void generateMemberIdentityCardPdf(MemberRegistrationDatabean databean) throws Exception {
+
+        File file = new File(personalIdentityCard);
+        file.getParentFile().mkdirs();
+
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(personalIdentityCard));
+        Document doc = new Document(pdfDoc, PageSize.LEGAL.rotate());
+        doc.setMargins(0 , 0, 0, 0);
+
+        ImageData imageData = ImageDataFactory.create("C:/Users/visma/Downloads/logo.jpg");
+        Image pdfImg = new Image(imageData);
+        pdfImg.setAutoScale(true);
+        doc.add(pdfImg);
+
+
+        FilesUploadDataBean filesUploadDataBean=dbFileStorageService.getFileFromId(databean.getImage());
+
+        ImageData data = ImageDataFactory.create(filesUploadDataBean.getData());
+
+        Paragraph paragraph=new Paragraph();
+        paragraph.setMarginTop(15);
+
+        Image image = new Image(data);
+        image.setHeight(150);
+        image.setWidth(150);
+
+        paragraph.add(image);
+
+
+        paragraph.add("   Personal Identity Card ");
+        paragraph.setFontSize(40);
+        paragraph.setTextAlignment(TextAlignment.JUSTIFIED_ALL);
+
+
+        BarcodeQRCode qrCode = new BarcodeQRCode("Example QR Code Creation in iText7");
+        PdfFormXObject barcodeObject = qrCode.createFormXObject(ColorConstants.RED, pdfDoc);
+        Image barcodeImage = new Image(barcodeObject).setWidth(150f).setHeight(150f);
+        paragraph.add(barcodeImage);
+
+
+
+        doc.add(paragraph);
+        doc.add(new LineSeparator(new SolidLine()));
+
+
+
+        Table table = new Table(2).useAllAvailableWidth();
+        table.setTextAlignment(TextAlignment.CENTER);
+
+        table.setMarginTop(20);
+        table.setMarginLeft(10);
+        table.setMarginRight(10);
+        table.setMarginBottom(10);
+
+
+        //memberDetailTable.addCell(setCellValue("Full Name  "));
+        table.addCell("Full Name");
+        table.addCell(setCellValue(databean.getFullName()));
+
+        table.addCell(setCellValue("Member ID "));
+        table.addCell(setCellValue(databean.getGender()));
+
+        table.addCell(setCellValue("Gender "));
+        table.addCell(setCellValue(databean.getMemberId().toString()));
+
+        table.addCell(setCellValue("Age "));
+        table.addCell(setCellValue(databean.getAge()));
+
+        table.addCell(setCellValue("Mobile No. "));
+        table.addCell(setCellValue(databean.getMobileNo()));
+
+        table.addCell(setCellValue("Email Address "));
+        table.addCell(setCellValue(databean.getEmailAddress()));
+
+        table.addCell(setCellValue("Birth date"));
+        table.addCell(setCellValue(databean.getBirthDate()));
+
+        table.addCell(setCellValue("Blood Group"));
+        table.addCell(setCellValue(databean.getBloodGroup()));
+
+        table.addCell(setCellValue("Marital Status"));
+        table.addCell(setCellValue(databean.getMaritalStatus()));
+
+        table.addCell(setCellValue("Address"));
+        table.addCell(setCellValue(databean.getAddress()));
+
+        table.addCell(setCellValue("Village"));
+        table.addCell(setCellValue(databean.getVillage()));
+
+        table.addCell(setCellValue("Street"));
+        table.addCell(setCellValue(databean.getStreet()));
+
+        table.addCell(setCellValue("Pin Code"));
+        table.addCell(setCellValue(databean.getPinCode()));
+
+        doc.add(table);
+
+        Table qualificationInformationTable = new Table(5).useAllAvailableWidth();
+        qualificationInformationTable.setTextAlignment(TextAlignment.CENTER);
+
+        qualificationInformationTable.setMarginTop(20);
+        qualificationInformationTable.setMarginLeft(10);
+        qualificationInformationTable.setMarginRight(10);
+        qualificationInformationTable.setMarginBottom(10);
+
+
+
+        int i=1;
+        for (QualificationInformation qualificationInformation:databean.getQualificationInformations()) {
+
+            qualificationInformationTable.addCell(setCellValue("SR No."));
+            qualificationInformationTable.addCell(setCellValue(String.valueOf(i)));
+
+            qualificationInformationTable.addCell(setCellValue("Name of Course"));
+            qualificationInformationTable.addCell(setCellValue(qualificationInformation.getNameOfCourse()));
+
+            qualificationInformationTable.addCell(setCellValue("School / University"));
+            qualificationInformationTable.addCell(setCellValue(qualificationInformation.getInstituteName()));
+
+            qualificationInformationTable.addCell(setCellValue("Passing Year"));
+            qualificationInformationTable.addCell(setCellValue(qualificationInformation.getPassingYear()));
+
+            qualificationInformationTable.addCell(setCellValue("Percentage"));
+            qualificationInformationTable.addCell(setCellValue(qualificationInformation.getPercentage()));
+
+            i++;
+        }
+
+        doc.add(qualificationInformationTable);
+
+        Table revenueInformationTable = new Table(5).useAllAvailableWidth();
+        revenueInformationTable.setTextAlignment(TextAlignment.CENTER);
+
+        revenueInformationTable.setMarginTop(20);
+        revenueInformationTable.setMarginLeft(10);
+        revenueInformationTable.setMarginRight(10);
+        revenueInformationTable.setMarginBottom(10);
+
+
+
+        int y=1;
+        for (RevenueInformation revenueInformation:databean.getRevenueInformations()) {
+
+            revenueInformationTable.addCell(setCellValue("SR No."));
+            revenueInformationTable.addCell(setCellValue(String.valueOf(y)));
+
+            revenueInformationTable.addCell(setCellValue("Type OF Revenue"));
+            revenueInformationTable.addCell(setCellValue(revenueInformation.getTypeOFRevenue()));
+
+            revenueInformationTable.addCell(setCellValue("Government / Private"));
+            revenueInformationTable.addCell(setCellValue(revenueInformation.getTypeOfJob()));
+
+            revenueInformationTable.addCell(setCellValue("Experience in Years"));
+            revenueInformationTable.addCell(setCellValue(revenueInformation.getExperience()));
+
+            revenueInformationTable.addCell(setCellValue("Working Place"));
+            revenueInformationTable.addCell(setCellValue(revenueInformation.getWorkingPlace()));
+
+            y++;
+        }
+
+        doc.add(revenueInformationTable);
+
+
+
 
         doc.close();
 

@@ -35,6 +35,7 @@ public class HomeController {
             documentGenerationService.generateChiefMemberInformationPdf(registerMemberService.getAllMemberList());
             documentGenerationService.generateCommiteeInformationPdf(commiteeManagementService.getAllCommiteeList());
             documentGenerationService.generateMemberBook(registerMemberService.getAllMemberList());
+            documentGenerationService.generateMemberIdentityCardPdf(registerMemberService.getAllMemberList().get(0));
 
 
         } catch (Exception e) {
