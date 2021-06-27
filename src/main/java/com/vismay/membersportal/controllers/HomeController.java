@@ -32,7 +32,8 @@ public class HomeController {
         model.addAttribute("noticeList",noticeSectionService.getAllNoticesList());
         try {
             //documentGenerationService.generateMemberBasicInformationPdf(registerMemberService.getAllMemberList());
-            documentGenerationService.generateChiefMemberInformationPdf(registerMemberService.getAllMemberList());
+            //documentGenerationService.generateChiefMemberInformationPdf(registerMemberService.getAllMemberList());
+            documentGenerationService.generateCommiteeInformationPdf(commiteeManagementService.getAllCommiteeList());
 
         } catch (Exception e) {
             e.printStackTrace();

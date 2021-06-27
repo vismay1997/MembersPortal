@@ -16,6 +16,8 @@ import com.itextpdf.layout.property.BackgroundImage;
 import com.itextpdf.layout.property.Property;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
+import com.vismay.membersportal.databeans.CommiteeDatabean;
+import com.vismay.membersportal.databeans.CommiteeMemberDataBean;
 import com.vismay.membersportal.databeans.MemberRegistrationDatabean;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +30,7 @@ public class DocumentGenerationService {
 
     private static String fileName="C:/Users/visma/Downloads/member-basic.pdf";
     private static String chiefFileName="C:/Users/visma/Downloads/member-chief.pdf";
-
+    private static String commiteeFileName="C:/Users/visma/Downloads/commitee-informtation.pdf";
     public  void generateMemberBasicInformationPdf(List<MemberRegistrationDatabean> allMemberList) throws Exception {
 
         File file = new File(fileName);
@@ -114,6 +116,78 @@ public class DocumentGenerationService {
             paragraph.add("\n"+ "Mobile No . :- "+databean.getMobileNo());
             paragraph.setMargin(1);
             table.addCell(paragraph);
+        }
+
+        doc.add(table);
+
+        doc.close();
+
+
+
+    }
+
+    public  void generateCommiteeInformationPdf(List<CommiteeDatabean> allMemberList) throws Exception {
+
+        File file = new File(commiteeFileName);
+        file.getParentFile().mkdirs();
+
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(commiteeFileName));
+        Document doc = new Document(pdfDoc, PageSize.LEGAL.rotate());
+        doc.setMargins(0 , 0, 0, 0);
+
+        ImageData imageData = ImageDataFactory.create("C:/Users/visma/Downloads/logo.jpg");
+        Image pdfImg = new Image(imageData);
+        pdfImg.setAutoScale(true);
+        doc.add(pdfImg);
+
+        Table table = new Table(UnitValue.createPercentArray(new float[]{2,2,4})).useAllAvailableWidth();
+        table.setTextAlignment(TextAlignment.LEFT);
+
+        table.setMarginTop(30);
+        table.setMarginLeft(10);
+        table.setMarginRight(10);
+        table.setMarginBottom(10);
+
+
+
+        Cell cell=new Cell(0,3);
+        cell.add(new Paragraph("Commitee Information - 24 Gam leva patidar Samaj , Kothamba"));
+        cell.setPadding(10);
+        table.addCell(cell);
+
+        table.addCell(setCellValue("Committee Name"));
+        table.addCell(setCellValue("Committee Description"));
+        table.addCell(setCellValue("Committee Member Information"));
+
+        for (CommiteeDatabean databean:allMemberList) {
+
+            table.addCell(setCellValue(databean.getCommiteeTitle()));
+            table.addCell(setCellValue(databean.getDescription()));
+
+            Table subTable = new Table(3).useAllAvailableWidth();
+            subTable.setTextAlignment(TextAlignment.LEFT);
+            subTable.setPadding(1);
+
+            subTable.addCell(setCellValue("SR No."));
+            subTable.addCell(setCellValue("Committee Designation"));
+            subTable.addCell(setCellValue("Name Of Assigned Member"));
+
+            int i = 1;
+            for (CommiteeMemberDataBean dataBean:databean.getCommiteeMembers()) {
+                subTable.addCell(String.valueOf(i));
+                subTable.addCell(dataBean.getNameOfCommitee());
+                subTable.addCell(dataBean.getNameOfMember());
+                i++;
+            }
+
+            subTable.setMarginTop(5);
+            subTable.setMarginLeft(5);
+            subTable.setMarginRight(5);
+            subTable.setMarginBottom(5);
+
+            Cell innerCell=new Cell().add(subTable);
+            table.addCell(innerCell);
+
         }
 
         doc.add(table);
