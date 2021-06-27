@@ -1,9 +1,6 @@
 package com.vismay.membersportal.controllers;
 
-import com.vismay.membersportal.services.CommiteeManagementService;
-import com.vismay.membersportal.services.ContactInformationServices;
-import com.vismay.membersportal.services.MarqueeService;
-import com.vismay.membersportal.services.NoticeSectionService;
+import com.vismay.membersportal.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,10 +20,23 @@ public class HomeController {
     @Autowired
     private ContactInformationServices contactInformationServices;
 
+    @Autowired
+    private DocumentGenerationService documentGenerationService;
+
+    @Autowired
+    private RegisterMemberService registerMemberService;
+
     @GetMapping(path = "/")
     public String getHome(Model model){
         model.addAttribute("marqueelist",marqueeService.getAllMarqueesList());
         model.addAttribute("noticeList",noticeSectionService.getAllNoticesList());
+        try {
+            //documentGenerationService.generateMemberBasicInformationPdf(registerMemberService.getAllMemberList());
+            documentGenerationService.generateChiefMemberInformationPdf(registerMemberService.getAllMemberList());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return "index";
     }
 
