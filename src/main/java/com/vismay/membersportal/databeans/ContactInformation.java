@@ -10,6 +10,8 @@ public class ContactInformation {
     @GeneratedValue
     private Long contactID;
 
+    private String profilePic;
+
     private String contactPersonName;
 
     private String contactPersonMobileNo;
@@ -18,6 +20,13 @@ public class ContactInformation {
 
     private  String designation;
 
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
 
     public Long getContactID() {
         return contactID;

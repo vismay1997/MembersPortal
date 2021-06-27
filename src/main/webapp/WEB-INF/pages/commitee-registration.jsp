@@ -118,10 +118,12 @@
                 var index = $('.commitee-body').length;
 
                 $(".add-more-commitee").click(function(){
-                    index++;
                     var data="<tr><td><input type='checkbox' class='commitee_case' class='form-control' /></td><td><span class='row_no'>"+index+"</span></td><td><input name='commiteeMembers["+index+"].nameOfCommitee' class='form-control'/></td><td><input name='commiteeMembers["+index+"].nameOfMember' class='form-control'/></td></tr>";
                     $(".commitee-body").append(data);
-
+                    $('.row_no').each((k,ele)=>{
+                        $(ele).html(k+1+'.')
+                    });
+                    index++;
                 });
 
                 $(".delete-qualification").on('click', function() {

@@ -21,16 +21,19 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th scope="col">Designation</th>
+
+                            <th scope="col">Profile Picture</th>
                             <th scope="col">Contact Person Name</th>
+                            <th scope="col">Designation</th>
                             <th scope="col">Contact Person  Mobile No.</th>
                             <th scope="col">Contact Person Address:</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>${item.designation}</td>
+                            <td><img src="/getimage?id=${item.profilePic}" height="50px" width="50px"></td>
                             <td>${item.contactPersonName}</td>
+                            <td>${item.designation}</td>
                             <td>${item.contactPersonMobileNo}</td>
                             <td>${item.contactPersonAddress}</td>
                         </tr>
